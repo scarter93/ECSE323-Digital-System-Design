@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Apr 13 14:38:52 2015
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : g48_Lab_5
+Top-level Entity Name : g48_music_box
+Family : Cyclone II
+Device : EP2C20F484C7
+Timing Models : Final
+Total logic elements : 777 / 18,752 ( 4 % )
+    Total combinational functions : 734 / 18,752 ( 4 % )
+    Dedicated logic registers : 381 / 18,752 ( 2 % )
+Total registers : 381
+Total pins : 87 / 315 ( 28 % )
+Total virtual pins : 0
+Total memory bits : 13,824 / 239,616 ( 6 % )
+Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

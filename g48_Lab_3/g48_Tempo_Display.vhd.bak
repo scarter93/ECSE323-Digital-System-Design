@@ -1,0 +1,45 @@
+library ieee;
+library lpm;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use lpm.lpm_components.all;
+
+entity bpm_offset is
+	port(
+		clk		 : in std_logic;
+		bpm 	 : in std_logic_vector(7 downto 0);
+		S1,S2,S3 : out std_logic_vector(6 downto 0));
+end bpm_offset;
+
+architecture arch of bpm_offset is
+signal bpm_offset : std_logic_vector(8 downto 0);
+signal BCD1, BCD2, BCD3 : std_logic_vector(3 downto 0);
+signal RB1,RB2,RB3 : std_logic;
+
+component g48_7_segment_decoder
+	port (code			  : in std_logic_vector(3 downto 0);
+		  RippleBlank_In  : in std_logic;
+		  RippleBlank_Out : out std_logic;
+		  segments		  : out std_logic_vector(6 downto 0));
+end component; 
+begin
+
+offset_table : lpm_rom -- use the altera rom library macrocell
+GENERIC MAP(
+lpm_widthad => 8, -- sets the width of the ROM address bus
+lpm_numwords => 256, -- sets the words stored in the ROM
+lpm_outdata => "UNREGISTERED", -- no register on the output
+lpm_address_control => "REGISTERED", -- register on the input
+lpm_file => "g48_bpm_offset.mif", -- the ascii file containing the ROM data
+lpm_width => 9) -- the width of the word stored in each ROM location
+PORT MAP(inclock => clk, address => bpm, q => bpm_offset);
+
+BCD1 <= "000" & bpm_offset(8);
+BCD2 <= bpm_offset(7 downto 4);
+BCD3 <= bpm_offset(3 downto 0);
+
+Seg1: g48_7_segment_decoder port map(BCD1, '1', RB1, S1);
+Seg2: g48_7_segment_decoder port map(BCD2, RB1, RB2, S2);
+Seg3: g48_7_segment_decoder port map(BCD3, RB2, RB3, S3);
+
+end arch;

@@ -1,0 +1,233 @@
+Simulator report for g48_Lab_2
+Tue Feb 17 17:00:24 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ALTSYNCRAM
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 10.0 us      ;
+; Simulation Netlist Size     ; 29 nodes     ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 2295         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C20F484C7 ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                         ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Option                                                                                     ; Setting       ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Simulation mode                                                                            ; Timing        ; Timing        ;
+; Start time                                                                                 ; 0 ns          ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF          ;               ;
+; Vector input source                                                                        ; g48_sine.vwf  ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On            ; On            ;
+; Check outputs                                                                              ; Off           ; Off           ;
+; Report simulation coverage                                                                 ; On            ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On            ; On            ;
+; Display missing 1-value coverage report                                                    ; On            ; On            ;
+; Display missing 0-value coverage report                                                    ; On            ; On            ;
+; Detect setup and hold time violations                                                      ; Off           ; Off           ;
+; Detect glitches                                                                            ; Off           ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off           ; Off           ;
+; Generate Signal Activity File                                                              ; Off           ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; On            ; Off           ;
+; VCD File for PowerPlay Power Analyzer output destination                                   ; g48_Lab_2.vcd ;               ;
+; Group bus channels in simulation results                                                   ; Off           ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On            ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE    ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off           ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On            ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto          ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------------------------------------------+
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ALTSYNCRAM ;
++--------------------------------------------------------------------------------------------------------+
+Please refer to fitter text-based report (*.fit.rpt) to view logical memory report content in ASCII.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;     100.00 % ;
+; Total nodes checked                                 ; 29           ;
+; Total output ports checked                          ; 43           ;
+; Total output ports with complete 1/0-value coverage ; 43           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 0            ;
+; Total output ports with no 0-value coverage         ; 0            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                       ;
++----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                ; Output Port Name                                                                                    ; Output Port Type ;
++----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------+
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[0]  ; portadataout0    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[1]  ; portadataout1    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[2]  ; portadataout2    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[3]  ; portadataout3    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[4]  ; portadataout4    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[5]  ; portadataout5    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[6]  ; portadataout6    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[7]  ; portadataout7    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a0 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[8]  ; portadataout8    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a9 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[9]  ; portadataout0    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a9 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[10] ; portadataout1    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a9 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[11] ; portadataout2    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a9 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[12] ; portadataout3    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a9 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[13] ; portadataout4    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a9 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[14] ; portadataout5    ;
+; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|ram_block1a9 ; |g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[15] ; portadataout6    ;
+; |g48_sine|sine[0]                                                                                        ; |g48_sine|sine[0]                                                                                   ; padio            ;
+; |g48_sine|sine[1]                                                                                        ; |g48_sine|sine[1]                                                                                   ; padio            ;
+; |g48_sine|sine[2]                                                                                        ; |g48_sine|sine[2]                                                                                   ; padio            ;
+; |g48_sine|sine[3]                                                                                        ; |g48_sine|sine[3]                                                                                   ; padio            ;
+; |g48_sine|sine[4]                                                                                        ; |g48_sine|sine[4]                                                                                   ; padio            ;
+; |g48_sine|sine[5]                                                                                        ; |g48_sine|sine[5]                                                                                   ; padio            ;
+; |g48_sine|sine[6]                                                                                        ; |g48_sine|sine[6]                                                                                   ; padio            ;
+; |g48_sine|sine[7]                                                                                        ; |g48_sine|sine[7]                                                                                   ; padio            ;
+; |g48_sine|sine[8]                                                                                        ; |g48_sine|sine[8]                                                                                   ; padio            ;
+; |g48_sine|sine[9]                                                                                        ; |g48_sine|sine[9]                                                                                   ; padio            ;
+; |g48_sine|sine[10]                                                                                       ; |g48_sine|sine[10]                                                                                  ; padio            ;
+; |g48_sine|sine[11]                                                                                       ; |g48_sine|sine[11]                                                                                  ; padio            ;
+; |g48_sine|sine[12]                                                                                       ; |g48_sine|sine[12]                                                                                  ; padio            ;
+; |g48_sine|sine[13]                                                                                       ; |g48_sine|sine[13]                                                                                  ; padio            ;
+; |g48_sine|sine[14]                                                                                       ; |g48_sine|sine[14]                                                                                  ; padio            ;
+; |g48_sine|sine[15]                                                                                       ; |g48_sine|sine[15]                                                                                  ; padio            ;
+; |g48_sine|clock                                                                                          ; |g48_sine|clock~corein                                                                              ; combout          ;
+; |g48_sine|angle[0]                                                                                       ; |g48_sine|angle[0]~corein                                                                           ; combout          ;
+; |g48_sine|angle[1]                                                                                       ; |g48_sine|angle[1]~corein                                                                           ; combout          ;
+; |g48_sine|angle[2]                                                                                       ; |g48_sine|angle[2]~corein                                                                           ; combout          ;
+; |g48_sine|angle[3]                                                                                       ; |g48_sine|angle[3]~corein                                                                           ; combout          ;
+; |g48_sine|angle[4]                                                                                       ; |g48_sine|angle[4]~corein                                                                           ; combout          ;
+; |g48_sine|angle[5]                                                                                       ; |g48_sine|angle[5]~corein                                                                           ; combout          ;
+; |g48_sine|angle[6]                                                                                       ; |g48_sine|angle[6]~corein                                                                           ; combout          ;
+; |g48_sine|angle[7]                                                                                       ; |g48_sine|angle[7]~corein                                                                           ; combout          ;
+; |g48_sine|angle[8]                                                                                       ; |g48_sine|angle[8]~corein                                                                           ; combout          ;
+; |g48_sine|clock~clkctrl                                                                                  ; |g48_sine|clock~clkctrl                                                                             ; outclk           ;
++----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Tue Feb 17 17:00:23 2015
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off g48_Lab_2 -c g48_Lab_2
+Info: Using vector source file "P:/DSD/Projects/g48_Lab_2/g48_sine.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of g48_sine.vwf called g48_Lab_2.sim_ori.vwf has been created in the db folder
+Warning: Cannot find channels in vector source file for the following output ports - channels are required for VCD file generation for PowerPlay Power Analyzer
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[0]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[1]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[2]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[3]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[4]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[5]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[6]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[7]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[8]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[9]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[10]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[11]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[12]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[13]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[14]"
+    Warning: Output port: "|g48_sine|lpm_rom:sin_table|altrom:srom|altsyncram:rom_block|altsyncram_a801:auto_generated|q_a[15]"
+    Warning: Output port: "|g48_sine|clock~clkctrl"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is     100.00 %
+Info: Number of transitions in simulation is 2295
+Info: Vector file g48_sine.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Created VCD File P:/DSD/Projects/g48_Lab_2/g48_Lab_2.vcd
+Info: Quartus II Simulator was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 157 megabytes
+    Info: Processing ended: Tue Feb 17 17:00:26 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+

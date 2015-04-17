@@ -1,0 +1,180 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 368 272)
+	(text "g48_audio_flash_control" (rect 5 0 124 12)(font "Arial" ))
+	(text "inst" (rect 8 240 25 252)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_50" (rect 0 0 31 12)(font "Arial" ))
+		(text "clk_50" (rect 21 27 52 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rst" (rect 0 0 12 12)(font "Arial" ))
+		(text "rst" (rect 21 43 33 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "init" (rect 0 0 14 12)(font "Arial" ))
+		(text "init" (rect 21 59 35 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "trigger" (rect 0 0 30 12)(font "Arial" ))
+		(text "trigger" (rect 21 75 51 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "loudness[3..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "loudness[3..0]" (rect 21 91 90 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "note[3..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "note[3..0]" (rect 21 107 68 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "octave[2..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "octave[2..0]" (rect 21 123 81 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 352 32)
+		(output)
+		(text "data_size_o[21..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "data_size_o[21..0]" (rect 242 27 331 39)(font "Arial" ))
+		(line (pt 352 32)(pt 336 32)(line_width 3))
+	)
+	(port
+		(pt 352 48)
+		(output)
+		(text "FL_ADDR[flash_memory_address_width-1..0]" (rect 0 0 227 12)(font "Arial" ))
+		(text "FL_ADDR[flash_memory_address_width-1..0]" (rect 104 43 331 55)(font "Arial" ))
+		(line (pt 352 48)(pt 336 48)(line_width 3))
+	)
+	(port
+		(pt 352 80)
+		(output)
+		(text "FL_CE_N" (rect 0 0 48 12)(font "Arial" ))
+		(text "FL_CE_N" (rect 283 75 331 87)(font "Arial" ))
+		(line (pt 352 80)(pt 336 80)(line_width 1))
+	)
+	(port
+		(pt 352 96)
+		(output)
+		(text "FL_OE_N" (rect 0 0 48 12)(font "Arial" ))
+		(text "FL_OE_N" (rect 283 91 331 103)(font "Arial" ))
+		(line (pt 352 96)(pt 336 96)(line_width 1))
+	)
+	(port
+		(pt 352 112)
+		(output)
+		(text "FL_WE_N" (rect 0 0 50 12)(font "Arial" ))
+		(text "FL_WE_N" (rect 281 107 331 119)(font "Arial" ))
+		(line (pt 352 112)(pt 336 112)(line_width 1))
+	)
+	(port
+		(pt 352 128)
+		(output)
+		(text "FL_RST_N" (rect 0 0 54 12)(font "Arial" ))
+		(text "FL_RST_N" (rect 277 123 331 135)(font "Arial" ))
+		(line (pt 352 128)(pt 336 128)(line_width 1))
+	)
+	(port
+		(pt 352 144)
+		(output)
+		(text "AUD_MCLK" (rect 0 0 59 12)(font "Arial" ))
+		(text "AUD_MCLK" (rect 272 139 331 151)(font "Arial" ))
+		(line (pt 352 144)(pt 336 144)(line_width 1))
+	)
+	(port
+		(pt 352 160)
+		(output)
+		(text "AUD_BCLK" (rect 0 0 57 12)(font "Arial" ))
+		(text "AUD_BCLK" (rect 274 155 331 167)(font "Arial" ))
+		(line (pt 352 160)(pt 336 160)(line_width 1))
+	)
+	(port
+		(pt 352 176)
+		(output)
+		(text "AUD_DACDAT" (rect 0 0 74 12)(font "Arial" ))
+		(text "AUD_DACDAT" (rect 257 171 331 183)(font "Arial" ))
+		(line (pt 352 176)(pt 336 176)(line_width 1))
+	)
+	(port
+		(pt 352 192)
+		(output)
+		(text "AUD_DACLRCK" (rect 0 0 82 12)(font "Arial" ))
+		(text "AUD_DACLRCK" (rect 249 187 331 199)(font "Arial" ))
+		(line (pt 352 192)(pt 336 192)(line_width 1))
+	)
+	(port
+		(pt 352 208)
+		(output)
+		(text "I2C_SDAT" (rect 0 0 51 12)(font "Arial" ))
+		(text "I2C_SDAT" (rect 280 203 331 215)(font "Arial" ))
+		(line (pt 352 208)(pt 336 208)(line_width 1))
+	)
+	(port
+		(pt 352 224)
+		(output)
+		(text "I2C_SCLK" (rect 0 0 51 12)(font "Arial" ))
+		(text "I2C_SCLK" (rect 280 219 331 231)(font "Arial" ))
+		(line (pt 352 224)(pt 336 224)(line_width 1))
+	)
+	(port
+		(pt 352 64)
+		(bidir)
+		(text "FL_DQ[flash_memory_data_width-1..0]" (rect 0 0 194 12)(font "Arial" ))
+		(text "FL_DQ[flash_memory_data_width-1..0]" (rect 137 59 331 71)(font "Arial" ))
+		(line (pt 352 64)(pt 336 64)(line_width 3))
+	)
+	(parameter
+		"FLASH_MEMORY_ADDRESS_WIDTH"
+		"22"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"FLASH_MEMORY_DATA_WIDTH"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 336 240)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 368 -64 468 16))
+)

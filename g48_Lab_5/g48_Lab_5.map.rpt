@@ -1,0 +1,1190 @@
+Analysis & Synthesis report for g48_Lab_5
+Mon Apr 13 14:38:35 2015
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|state
+ 10. State Machine - |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|state2
+ 11. State Machine - |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|present_state
+ 12. State Machine - |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for LPM_ROM:song_table1|altrom:srom|altsyncram:rom_block|altsyncram_qo01:auto_generated
+ 19. Source assignments for LPM_ROM:song_table2|altrom:srom|altsyncram:rom_block|altsyncram_jo01:auto_generated
+ 20. Source assignments for g48_Tempo:get_tempo
+ 21. Source assignments for g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom|altsyncram:rom_block|altsyncram_jd01:auto_generated
+ 22. Source assignments for g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component
+ 23. Source assignments for g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2
+ 24. Parameter Settings for User Entity Instance: Top-level Entity: |g48_music_box
+ 25. Parameter Settings for User Entity Instance: LPM_ROM:song_table1
+ 26. Parameter Settings for User Entity Instance: LPM_ROM:song_table2
+ 27. Parameter Settings for User Entity Instance: g48_Tempo:get_tempo|LPM_ROM:tempo_table
+ 28. Parameter Settings for User Entity Instance: g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component
+ 29. Parameter Settings for User Entity Instance: g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2
+ 30. Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control
+ 31. Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem
+ 32. Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui
+ 33. Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm
+ 34. Parameter Settings for Inferred Entity Instance: g48_audio_flash_control:flash_control|lpm_mult:Mult0
+ 35. lpm_mult Parameter Settings by Entity Instance
+ 36. Port Connectivity Checks: "g48_7_segment_decoder:S3"
+ 37. Port Connectivity Checks: "g48_7_segment_decoder:S2"
+ 38. Port Connectivity Checks: "g48_7_segment_decoder:S1"
+ 39. Port Connectivity Checks: "g48_7_segment_decoder:S0"
+ 40. Port Connectivity Checks: "g48_audio_flash_control:flash_control|g48_audio_interface:audioOut"
+ 41. Port Connectivity Checks: "g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem"
+ 42. Port Connectivity Checks: "g48_audio_flash_control:flash_control"
+ 43. Port Connectivity Checks: "g48_note_timer:note_time"
+ 44. Port Connectivity Checks: "g48_Tempo:get_tempo"
+ 45. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Apr 13 14:38:35 2015    ;
+; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name                      ; g48_Lab_5                                ;
+; Top-level Entity Name              ; g48_music_box                            ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 831                                      ;
+;     Total combinational functions  ; 734                                      ;
+;     Dedicated logic registers      ; 381                                      ;
+; Total registers                    ; 381                                      ;
+; Total pins                         ; 87                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 13,824                                   ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; g48_music_box      ; g48_Lab_5          ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Type of Retiming Performed During Resynthesis                              ; Full               ;                    ;
+; Resynthesis Optimization Effort                                            ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                                   ; Normal             ;                    ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Synchronization Register Chain Length                                      ; 2                  ; 3                  ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++-----------------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------+
+; File Name with User-Entered Path              ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                            ;
++-----------------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------+
+; g48_tempo2.mif                                ; yes             ; User Memory Initialization File  ; P:/DSD/Projects/g48_Lab_5/g48_tempo2.mif                                ;
+; g48_demo_song.mif                             ; yes             ; User Memory Initialization File  ; P:/DSD/Projects/g48_Lab_5/g48_demo_song.mif                             ;
+; g48_audio_flash_control.vhd                   ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/g48_audio_flash_control.vhd                   ;
+; Altera_UP_Flash_Memory_Controller.vhd         ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/Altera_UP_Flash_Memory_Controller.vhd         ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone.vhd ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/Altera_UP_Flash_Memory_IP_Core_Standalone.vhd ;
+; Altera_UP_Flash_Memory_User_Interface.vhd     ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/Altera_UP_Flash_Memory_User_Interface.vhd     ;
+; g48_7_segment_decoder.vhd                     ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/g48_7_segment_decoder.vhd                     ;
+; g48_audio_interface.vhd                       ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/g48_audio_interface.vhd                       ;
+; g48_flash_read_control.vhd                    ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/g48_flash_read_control.vhd                    ;
+; g48_Tempo.vhd                                 ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/g48_Tempo.vhd                                 ;
+; g48_note_timer.vhd                            ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/g48_note_timer.vhd                            ;
+; g48_music_box.vhd                             ; yes             ; User VHDL File                   ; P:/DSD/Projects/g48_Lab_5/g48_music_box.vhd                             ;
+; g48_mary_lamb.mif                             ; yes             ; User Memory Initialization File  ; P:/DSD/Projects/g48_Lab_5/g48_mary_lamb.mif                             ;
+; lpm_rom.tdf                                   ; yes             ; Megafunction                     ; c:/altera/91/quartus/libraries/megafunctions/lpm_rom.tdf                ;
+; altrom.tdf                                    ; yes             ; Megafunction                     ; c:/altera/91/quartus/libraries/megafunctions/altrom.tdf                 ;
+; altsyncram.tdf                                ; yes             ; Megafunction                     ; c:/altera/91/quartus/libraries/megafunctions/altsyncram.tdf             ;
+; db/altsyncram_qo01.tdf                        ; yes             ; Auto-Generated Megafunction      ; P:/DSD/Projects/g48_Lab_5/db/altsyncram_qo01.tdf                        ;
+; db/altsyncram_jo01.tdf                        ; yes             ; Auto-Generated Megafunction      ; P:/DSD/Projects/g48_Lab_5/db/altsyncram_jo01.tdf                        ;
+; db/altsyncram_jd01.tdf                        ; yes             ; Auto-Generated Megafunction      ; P:/DSD/Projects/g48_Lab_5/db/altsyncram_jd01.tdf                        ;
+; lpm_counter.tdf                               ; yes             ; Megafunction                     ; c:/altera/91/quartus/libraries/megafunctions/lpm_counter.tdf            ;
+; db/cntr_v8l.tdf                               ; yes             ; Auto-Generated Megafunction      ; P:/DSD/Projects/g48_Lab_5/db/cntr_v8l.tdf                               ;
+; db/cntr_g7l.tdf                               ; yes             ; Auto-Generated Megafunction      ; P:/DSD/Projects/g48_Lab_5/db/cntr_g7l.tdf                               ;
+; lpm_mult.tdf                                  ; yes             ; Megafunction                     ; c:/altera/91/quartus/libraries/megafunctions/lpm_mult.tdf               ;
+; db/mult_rvs.tdf                               ; yes             ; Auto-Generated Megafunction      ; P:/DSD/Projects/g48_Lab_5/db/mult_rvs.tdf                               ;
++-----------------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 831    ;
+;                                             ;        ;
+; Total combinational functions               ; 734    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 326    ;
+;     -- 3 input functions                    ; 214    ;
+;     -- <=2 input functions                  ; 194    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 524    ;
+;     -- arithmetic mode                      ; 210    ;
+;                                             ;        ;
+; Total registers                             ; 381    ;
+;     -- Dedicated logic registers            ; 381    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 87     ;
+; Total memory bits                           ; 13824  ;
+; Maximum fan-out node                        ; clk_50 ;
+; Maximum fan-out                             ; 435    ;
+; Total fan-out                               ; 4317   ;
+; Average fan-out                             ; 3.44   ;
++---------------------------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                      ;
++------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                              ; Library Name ;
++------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |g48_music_box                                             ; 734 (43)          ; 381 (31)     ; 13824       ; 0            ; 0       ; 0         ; 87   ; 0            ; |g48_music_box                                                                                                                                   ; work         ;
+;    |g48_7_segment_decoder:S0|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_7_segment_decoder:S0                                                                                                          ;              ;
+;    |g48_7_segment_decoder:S1|                              ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_7_segment_decoder:S1                                                                                                          ;              ;
+;    |g48_7_segment_decoder:S2|                              ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_7_segment_decoder:S2                                                                                                          ;              ;
+;    |g48_7_segment_decoder:S3|                              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_7_segment_decoder:S3                                                                                                          ;              ;
+;    |g48_Tempo:get_tempo|                                   ; 41 (14)           ; 27 (0)       ; 5632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo                                                                                                               ;              ;
+;       |lpm_counter:lpm_counter_component2|                 ; 5 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_counter:lpm_counter_component2                                                                            ;              ;
+;          |cntr_g7l:auto_generated|                         ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_counter:lpm_counter_component2|cntr_g7l:auto_generated                                                    ;              ;
+;       |lpm_counter:lpm_counter_component|                  ; 22 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_counter:lpm_counter_component                                                                             ;              ;
+;          |cntr_v8l:auto_generated|                         ; 22 (22)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_counter:lpm_counter_component|cntr_v8l:auto_generated                                                     ;              ;
+;       |lpm_rom:tempo_table|                                ; 0 (0)             ; 0 (0)        ; 5632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_rom:tempo_table                                                                                           ;              ;
+;          |altrom:srom|                                     ; 0 (0)             ; 0 (0)        ; 5632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_rom:tempo_table|altrom:srom                                                                               ;              ;
+;             |altsyncram:rom_block|                         ; 0 (0)             ; 0 (0)        ; 5632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_rom:tempo_table|altrom:srom|altsyncram:rom_block                                                          ;              ;
+;                |altsyncram_jd01:auto_generated|            ; 0 (0)             ; 0 (0)        ; 5632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_Tempo:get_tempo|lpm_rom:tempo_table|altrom:srom|altsyncram:rom_block|altsyncram_jd01:auto_generated                           ;              ;
+;    |g48_audio_flash_control:flash_control|                 ; 582 (0)           ; 313 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control                                                                                             ;              ;
+;       |Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem| ; 97 (2)            ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem                                          ;              ;
+;          |Altera_UP_Flash_Memory_Controller:fm|            ; 27 (27)           ; 52 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm     ;              ;
+;          |Altera_UP_Flash_Memory_User_Interface:ui|        ; 68 (68)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui ;              ;
+;       |g48_audio_interface:audioOut|                       ; 169 (169)         ; 91 (91)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut                                                                ;              ;
+;       |g48_flash_read_control:readFlash|                   ; 247 (247)         ; 111 (111)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash                                                            ;              ;
+;       |lpm_mult:Mult0|                                     ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control|lpm_mult:Mult0                                                                              ;              ;
+;          |mult_rvs:auto_generated|                         ; 69 (69)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_audio_flash_control:flash_control|lpm_mult:Mult0|mult_rvs:auto_generated                                                      ;              ;
+;    |g48_note_timer:note_time|                              ; 42 (42)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|g48_note_timer:note_time                                                                                                          ;              ;
+;    |lpm_rom:song_table1|                                   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table1                                                                                                               ;              ;
+;       |altrom:srom|                                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table1|altrom:srom                                                                                                   ;              ;
+;          |altsyncram:rom_block|                            ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table1|altrom:srom|altsyncram:rom_block                                                                              ;              ;
+;             |altsyncram_qo01:auto_generated|               ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table1|altrom:srom|altsyncram:rom_block|altsyncram_qo01:auto_generated                                               ;              ;
+;    |lpm_rom:song_table2|                                   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table2                                                                                                               ;              ;
+;       |altrom:srom|                                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table2|altrom:srom                                                                                                   ;              ;
+;          |altsyncram:rom_block|                            ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table2|altrom:srom|altsyncram:rom_block                                                                              ;              ;
+;             |altsyncram_jo01:auto_generated|               ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_music_box|lpm_rom:song_table2|altrom:srom|altsyncram:rom_block|altsyncram_jo01:auto_generated                                               ;              ;
++------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                        ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------------+
+; Name                                                                                                               ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF               ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------------+
+; g48_Tempo:get_tempo|lpm_rom:tempo_table|altrom:srom|altsyncram:rom_block|altsyncram_jd01:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 22           ; --           ; --           ; 5632 ; g48_tempo2.mif    ;
+; lpm_rom:song_table1|altrom:srom|altsyncram:rom_block|altsyncram_qo01:auto_generated|ALTSYNCRAM                     ; AUTO ; ROM  ; 256          ; 16           ; --           ; --           ; 4096 ; g48_demo_song.mif ;
+; lpm_rom:song_table2|altrom:srom|altsyncram:rom_block|altsyncram_jo01:auto_generated|ALTSYNCRAM                     ; AUTO ; ROM  ; 256          ; 16           ; --           ; --           ; 4096 ; g48_mary_lamb.mif ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|state                                                                                                                                                                                                                                                          ;
++----------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------+------------+------------+----------+----------+----------+----------------+----------------+
+; Name           ; state.send ; state.sw2b3 ; state.sw2b2 ; state.sw2b1 ; state.sw1b3 ; state.sw1b2 ; state.sw1b1 ; state.sack33 ; state.sack32 ; state.sack31 ; state.sack23 ; state.sack22 ; state.sack21 ; state.sack13 ; state.sack12 ; state.sack11 ; state.sab3 ; state.sab2 ; state.sab1 ; state.s2 ; state.s1 ; state.s0 ; state.sw_init1 ; state.sw_init0 ;
++----------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------+------------+------------+----------+----------+----------+----------------+----------------+
+; state.sw_init0 ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 0              ;
+; state.sw_init1 ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 1              ; 1              ;
+; state.s0       ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 1        ; 0              ; 1              ;
+; state.s1       ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 1        ; 0        ; 0              ; 1              ;
+; state.s2       ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1        ; 0        ; 0        ; 0              ; 1              ;
+; state.sab1     ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sab2     ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sab3     ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack11   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack12   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack13   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack21   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack22   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack23   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack31   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack32   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack33   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw1b1    ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw1b2    ; 0          ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw1b3    ; 0          ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw2b1    ; 0          ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw2b2    ; 0          ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw2b3    ; 0          ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.send     ; 1          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
++----------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------+------------+------------+----------+----------+----------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|state2 ;
++-----------------+-----------------+-----------------+-----------------+----------------------------------+
+; Name            ; state2.sw_write ; state2.sw_ready ; state2.sw_init1 ; state2.sw_init0                  ;
++-----------------+-----------------+-----------------+-----------------+----------------------------------+
+; state2.sw_init0 ; 0               ; 0               ; 0               ; 0                                ;
+; state2.sw_init1 ; 0               ; 0               ; 1               ; 1                                ;
+; state2.sw_ready ; 0               ; 1               ; 0               ; 1                                ;
+; state2.sw_write ; 1               ; 0               ; 0               ; 1                                ;
++-----------------+-----------------+-----------------+-----------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|present_state ;
++------------------------------+-----------------------------+-----------------------+----------------------+------------------------------+---------------------------------+
+; Name                         ; present_state.s_ACKNOWLEDGE ; present_state.s_WRITE ; present_state.s_READ ; present_state.s_WAIT_COMMAND ; present_state.s_RESET           ;
++------------------------------+-----------------------------+-----------------------+----------------------+------------------------------+---------------------------------+
+; present_state.s_RESET        ; 0                           ; 0                     ; 0                    ; 0                            ; 0                               ;
+; present_state.s_WAIT_COMMAND ; 0                           ; 0                     ; 0                    ; 1                            ; 1                               ;
+; present_state.s_READ         ; 0                           ; 0                     ; 1                    ; 0                            ; 1                               ;
+; present_state.s_WRITE        ; 0                           ; 1                     ; 0                    ; 0                            ; 1                               ;
+; present_state.s_ACKNOWLEDGE  ; 1                           ; 0                     ; 0                    ; 0                            ; 1                               ;
++------------------------------+-----------------------------+-----------------------+----------------------+------------------------------+---------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state                                                                                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------+-----------------------------+----------------------------------+--------------------------------------+-----------------------------------+-----------------------------+----------------------------+------------------------------+--------------------------------------+------------------------------------+-----------------------------------+-----------------------------+---------------------------------------+-----------------------------------+----------------------+------------------------------+
+; Name                                  ; present_state.s_ACKNOWLEDGE ; present_state.s_CHECK_ERASE_DONE ; present_state.s_ERASE_WAIT_COMPLETED ; present_state.s_ERASE_CYCLE_DELAY ; present_state.s_ERASE_CYCLE ; present_state.s_ERASE_CHIP ; present_state.s_ERASE_SECTOR ; present_state.s_CHECK_WRITE_COMPLETE ; present_state.s_WAIT_UNTIL_WRITTEN ; present_state.s_WRITE_CYCLE_DELAY ; present_state.s_WRITE_CYCLE ; present_state.s_CHECK_MEMORY_CONTENTS ; present_state.s_READ_BEFORE_WRITE ; present_state.s_READ ; present_state.s_WAIT_COMMAND ;
++---------------------------------------+-----------------------------+----------------------------------+--------------------------------------+-----------------------------------+-----------------------------+----------------------------+------------------------------+--------------------------------------+------------------------------------+-----------------------------------+-----------------------------+---------------------------------------+-----------------------------------+----------------------+------------------------------+
+; present_state.s_WAIT_COMMAND          ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 0                            ;
+; present_state.s_READ                  ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 1                    ; 1                            ;
+; present_state.s_READ_BEFORE_WRITE     ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 1                                 ; 0                    ; 1                            ;
+; present_state.s_CHECK_MEMORY_CONTENTS ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 1                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_WRITE_CYCLE           ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 1                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_WRITE_CYCLE_DELAY     ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 1                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_WAIT_UNTIL_WRITTEN    ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 1                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_CHECK_WRITE_COMPLETE  ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 1                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_SECTOR          ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 1                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_CHIP            ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 1                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_CYCLE           ; 0                           ; 0                                ; 0                                    ; 0                                 ; 1                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_CYCLE_DELAY     ; 0                           ; 0                                ; 0                                    ; 1                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_WAIT_COMPLETED  ; 0                           ; 0                                ; 1                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_CHECK_ERASE_DONE      ; 0                           ; 1                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ACKNOWLEDGE           ; 1                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
++---------------------------------------+-----------------------------+----------------------------------+--------------------------------------+-----------------------------------+-----------------------------+----------------------------+------------------------------+--------------------------------------+------------------------------------+-----------------------------------+-----------------------------+---------------------------------------+-----------------------------------+----------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                         ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                           ; Reason for Removal                                                                                                                                               ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[0..7]                                                                 ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|erase_reg                                                                      ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|write_reg                                                                      ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[0..7]                        ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[0..5,26..29]                                                                                  ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD1[5..7]                                                                                      ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_byte[0..3,6]               ; Merged with g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_byte[7] ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_byte[4..5,7]               ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_address[0..21]             ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[25]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[49]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[24]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[48]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[23]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[47]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[22]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[46]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[21]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[45]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[20]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[44]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[19]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[43]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[18]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[42]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[17]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[41]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[16]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[40]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[15]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[39]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[14]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[38]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[13]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[37]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[12]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[36]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[11]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[35]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[10]                                                                                           ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[34]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[9]                                                                                            ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[33]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[8]                                                                                            ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[32]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[7]                                                                                            ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[31]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[6]                                                                                            ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|LRDATA[30]                                                                        ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD2[7]                                                                                         ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD1[0]                                                                      ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD2[5]                                                                                         ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD2[6]                                                                      ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD2[1]                                                                                         ; Merged with g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD1[4]                                                                      ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_SECTOR          ; Lost fanout                                                                                                                                                      ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_CHIP            ; Lost fanout                                                                                                                                                      ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_READ_BEFORE_WRITE     ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_CHECK_MEMORY_CONTENTS ; Stuck at GND due to stuck port data_in                                                                                                                           ;
+; Total Number of Removed Registers = 88                                                                                                                                  ;                                                                                                                                                                  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                                               ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                       ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                                  ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[0]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[0]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[1]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[1]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[2]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[2]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[3]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[3]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[4]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[4]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[5]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[5]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[6]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[6]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[7]                                                                ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[7]                           ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_READ_BEFORE_WRITE ; Stuck at GND              ; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_CHECK_MEMORY_CONTENTS ;
+;                                                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                                                         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 381   ;
+; Number of registers using Synchronous Clear  ; 31    ;
+; Number of registers using Synchronous Load   ; 72    ;
+; Number of registers using Asynchronous Clear ; 295   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 215   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                              ;
++-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                               ; Fan out ;
++-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_address[25]                                                       ; 3       ;
+; g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_address[26]                                                       ; 3       ;
+; g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_address[28]                                                       ; 3       ;
+; g48_note_timer:note_time|TRIGGER                                                                                                                ; 10      ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[0]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[1]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[2]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[3]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[4]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[5]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[6]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[7]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[8]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[9]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[10] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[11] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[12] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[13] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[14] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[15] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[16] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[17] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[18] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[19] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[20] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[21] ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_ce_n        ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_oe_n        ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_we_n        ; 1       ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|Mcount                                                                       ; 7       ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|Bcount[2]                                                                    ; 5       ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|bit_count[0]                                                                 ; 11      ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|bit_count[1]                                                                 ; 10      ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|bit_count[2]                                                                 ; 6       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[0]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[1]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[2]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[3]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[4]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[5]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[6]  ; 1       ;
+; g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[7]  ; 1       ;
+; g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|iflash_address[3]                                                        ; 2       ;
+; g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|iflash_address[5]                                                        ; 2       ;
+; g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_READY                                                                    ; 5       ;
+; g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|init                                                                     ; 2       ;
+; Total number of inverted registers = 46                                                                                                         ;         ;
++-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|data_size[20]                                                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|data_size[9]                                                            ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |g48_music_box|g48_note_timer:note_time|count[0]                                                                                                              ;
+; 3:1                ; 42 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_address[34]                                                      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD1[3]                                                                ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|SCI_WORD1[4]                                                                ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|data_size[7]                                                            ;
+; 12:1               ; 19 bits   ; 152 LEs       ; 19 LEs               ; 133 LEs                ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|iflash_address[7]                                                       ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |g48_music_box|addr_rom[0]                                                                                                                                    ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|state[3]                                                                ;
+; 19:1               ; 6 bits    ; 72 LEs        ; 6 LEs                ; 66 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|clk_count[2]                                                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_data[15]                                                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_address[26]                                                      ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[6] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_data[3]                                                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[5] ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 2 LEs                ; 14 LEs                 ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|iflash_address[3]                                                       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|bit_count[0]                                                                ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|Selector5                                                                   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|Selector4                                                                   ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; No         ; |g48_music_box|g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|Selector12                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Source assignments for LPM_ROM:song_table1|altrom:srom|altsyncram:rom_block|altsyncram_qo01:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                           ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                            ;
++---------------------------------+--------------------+------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Source assignments for LPM_ROM:song_table2|altrom:srom|altsyncram:rom_block|altsyncram_jo01:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                           ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                            ;
++---------------------------------+--------------------+------+----------------------------------------------+
+
+
++--------------------------------------------------------+
+; Source assignments for g48_Tempo:get_tempo             ;
++------------------------------+-------+------+----------+
+; Assignment                   ; Value ; From ; To       ;
++------------------------------+-------+------+----------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; count[4] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; count[4] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; count[3] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; count[3] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; count[2] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; count[2] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; count[1] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; count[1] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; count[0] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; count[0] ;
++------------------------------+-------+------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom|altsyncram:rom_block|altsyncram_jd01:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                               ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Source assignments for g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component ;
++---------------------------+-------+------+-----------------------------------+
+; Assignment                ; Value ; From ; To                                ;
++---------------------------+-------+------+-----------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                 ;
++---------------------------+-------+------+-----------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Source assignments for g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2 ;
++---------------------------+-------+------+------------------------------------+
+; Assignment                ; Value ; From ; To                                 ;
++---------------------------+-------+------+------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                  ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                  ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                  ;
++---------------------------+-------+------+------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |g48_music_box ;
++----------------------------+-------+------------------------------------------+
+; Parameter Name             ; Value ; Type                                     ;
++----------------------------+-------+------------------------------------------+
+; FLASH_MEMORY_ADDRESS_WIDTH ; 22    ; Signed Integer                           ;
+; FLASH_MEMORY_DATA_WIDTH    ; 8     ; Signed Integer                           ;
++----------------------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_ROM:song_table1 ;
++------------------------+-------------------+---------------------+
+; Parameter Name         ; Value             ; Type                ;
++------------------------+-------------------+---------------------+
+; LPM_WIDTH              ; 16                ; Signed Integer      ;
+; LPM_WIDTHAD            ; 8                 ; Signed Integer      ;
+; LPM_NUMWORDS           ; 256               ; Signed Integer      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED        ; Untyped             ;
+; LPM_OUTDATA            ; UNREGISTERED      ; Untyped             ;
+; LPM_FILE               ; g48_demo_song.mif ; Untyped             ;
+; DEVICE_FAMILY          ; Cyclone II        ; Untyped             ;
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE      ;
++------------------------+-------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_ROM:song_table2 ;
++------------------------+-------------------+---------------------+
+; Parameter Name         ; Value             ; Type                ;
++------------------------+-------------------+---------------------+
+; LPM_WIDTH              ; 16                ; Signed Integer      ;
+; LPM_WIDTHAD            ; 8                 ; Signed Integer      ;
+; LPM_NUMWORDS           ; 256               ; Signed Integer      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED        ; Untyped             ;
+; LPM_OUTDATA            ; UNREGISTERED      ; Untyped             ;
+; LPM_FILE               ; g48_mary_lamb.mif ; Untyped             ;
+; DEVICE_FAMILY          ; Cyclone II        ; Untyped             ;
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE      ;
++------------------------+-------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g48_Tempo:get_tempo|LPM_ROM:tempo_table ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTH              ; 22             ; Signed Integer                             ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                             ;
+; LPM_NUMWORDS           ; 256            ; Signed Integer                             ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                    ;
+; LPM_OUTDATA            ; UNREGISTERED   ; Untyped                                    ;
+; LPM_FILE               ; g48_tempo2.mif ; Untyped                                    ;
+; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component ;
++------------------------+-------------+-------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                        ;
++------------------------+-------------+-------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                              ;
+; LPM_WIDTH              ; 22          ; Signed Integer                                              ;
+; LPM_DIRECTION          ; DOWN        ; Untyped                                                     ;
+; LPM_MODULUS            ; 0           ; Signed Integer                                              ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                     ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                     ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                     ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                     ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                          ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                          ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                     ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                     ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                     ;
+; CBXI_PARAMETER         ; cntr_v8l    ; Untyped                                                     ;
++------------------------+-------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2 ;
++------------------------+-------------+--------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                         ;
++------------------------+-------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 5           ; Signed Integer                                               ;
+; LPM_DIRECTION          ; DOWN        ; Untyped                                                      ;
+; LPM_MODULUS            ; 0           ; Signed Integer                                               ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                      ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                      ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                      ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                      ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                           ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                           ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                      ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                      ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                      ;
+; CBXI_PARAMETER         ; cntr_g7l    ; Untyped                                                      ;
++------------------------+-------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control ;
++----------------------------+-------+-----------------------------------------------+
+; Parameter Name             ; Value ; Type                                          ;
++----------------------------+-------+-----------------------------------------------+
+; FLASH_MEMORY_ADDRESS_WIDTH ; 22    ; Signed Integer                                ;
+; FLASH_MEMORY_DATA_WIDTH    ; 8     ; Signed Integer                                ;
++----------------------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem ;
++----------------------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name             ; Value ; Type                                                                                             ;
++----------------------------+-------+--------------------------------------------------------------------------------------------------+
+; FLASH_MEMORY_ADDRESS_WIDTH ; 22    ; Signed Integer                                                                                   ;
+; FLASH_MEMORY_DATA_WIDTH    ; 8     ; Signed Integer                                                                                   ;
++----------------------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui ;
++----------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name             ; Value ; Type                                                                                                                                      ;
++----------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; flash_memory_address_width ; 22    ; Signed Integer                                                                                                                            ;
+; flash_memory_data_width    ; 8     ; Signed Integer                                                                                                                            ;
++----------------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm ;
++----------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name             ; Value ; Type                                                                                                                                  ;
++----------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
+; flash_memory_address_width ; 22    ; Signed Integer                                                                                                                        ;
+; flash_memory_data_width    ; 8     ; Signed Integer                                                                                                                        ;
++----------------------------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: g48_audio_flash_control:flash_control|lpm_mult:Mult0 ;
++------------------------------------------------+------------+-----------------------------------------+
+; Parameter Name                                 ; Value      ; Type                                    ;
++------------------------------------------------+------------+-----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                          ;
+; LPM_WIDTHA                                     ; 16         ; Untyped                                 ;
+; LPM_WIDTHB                                     ; 4          ; Untyped                                 ;
+; LPM_WIDTHP                                     ; 20         ; Untyped                                 ;
+; LPM_WIDTHR                                     ; 20         ; Untyped                                 ;
+; LPM_WIDTHS                                     ; 1          ; Untyped                                 ;
+; LPM_REPRESENTATION                             ; SIGNED     ; Untyped                                 ;
+; LPM_PIPELINE                                   ; 0          ; Untyped                                 ;
+; LATENCY                                        ; 0          ; Untyped                                 ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                                 ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                                 ;
+; USE_EAB                                        ; OFF        ; Untyped                                 ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped                                 ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                                 ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                                 ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K                     ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                                 ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                                 ;
+; CBXI_PARAMETER                                 ; mult_rvs   ; Untyped                                 ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                                 ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                                 ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                                 ;
++------------------------------------------------+------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                               ;
++---------------------------------------+------------------------------------------------------+
+; Name                                  ; Value                                                ;
++---------------------------------------+------------------------------------------------------+
+; Number of entity instances            ; 1                                                    ;
+; Entity Instance                       ; g48_audio_flash_control:flash_control|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                                                   ;
+;     -- LPM_WIDTHB                     ; 4                                                    ;
+;     -- LPM_WIDTHP                     ; 20                                                   ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                               ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                   ;
+;     -- USE_EAB                        ; OFF                                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                   ;
++---------------------------------------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_7_segment_decoder:S3"                                                                      ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; rippleblank_in  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rippleblank_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_7_segment_decoder:S2"                                                                      ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; code[3]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rippleblank_in  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rippleblank_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_7_segment_decoder:S1"                                                                      ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; code[3]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rippleblank_in  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rippleblank_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_7_segment_decoder:S0"                                                                      ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; rippleblank_in  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rippleblank_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_audio_flash_control:flash_control|g48_audio_interface:audioOut" ;
++-------------+-------+----------+---------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                       ;
++-------------+-------+----------+---------------------------------------------------------------+
+; ldata[3..0] ; Input ; Info     ; Stuck at GND                                                  ;
+; rdata[3..0] ; Input ; Info     ; Stuck at GND                                                  ;
+; w_en        ; Input ; Info     ; Stuck at VCC                                                  ;
++-------------+-------+----------+---------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem" ;
++---------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                 ;
++---------+-------+----------+-----------------------------------------------------------------------------------------+
+; i_data  ; Input ; Info     ; Stuck at GND                                                                            ;
+; i_write ; Input ; Info     ; Stuck at GND                                                                            ;
+; i_erase ; Input ; Info     ; Stuck at GND                                                                            ;
++---------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_audio_flash_control:flash_control"                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_size_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_note_timer:note_time"                                                                ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; count_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g48_Tempo:get_tempo"                                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; count2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Mon Apr 13 14:38:24 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g48_Lab_5 -c g48_Lab_5
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 2 design units, including 1 entities, in source file g48_audio_flash_control.vhd
+    Info: Found design unit 1: g48_audio_flash_control-implementation
+    Info: Found entity 1: g48_audio_flash_control
+Info: Found 2 design units, including 1 entities, in source file altera_up_flash_memory_controller.vhd
+    Info: Found design unit 1: Altera_UP_Flash_Memory_Controller-rtl
+    Info: Found entity 1: Altera_UP_Flash_Memory_Controller
+Info: Found 2 design units, including 1 entities, in source file altera_up_flash_memory_ip_core_standalone.vhd
+    Info: Found design unit 1: Altera_UP_Flash_Memory_IP_Core_Standalone-rtl
+    Info: Found entity 1: Altera_UP_Flash_Memory_IP_Core_Standalone
+Info: Found 2 design units, including 1 entities, in source file altera_up_flash_memory_user_interface.vhd
+    Info: Found design unit 1: Altera_UP_Flash_Memory_User_Interface-rtl
+    Info: Found entity 1: Altera_UP_Flash_Memory_User_Interface
+Info: Found 2 design units, including 1 entities, in source file g48_7_segment_decoder.vhd
+    Info: Found design unit 1: g48_7_segment_decoder-implementation
+    Info: Found entity 1: g48_7_segment_decoder
+Info: Found 2 design units, including 1 entities, in source file g48_audio_interface.vhd
+    Info: Found design unit 1: g48_audio_interface-a
+    Info: Found entity 1: g48_audio_interface
+Info: Found 2 design units, including 1 entities, in source file g48_flash_read_control.vhd
+    Info: Found design unit 1: g48_flash_read_control-a
+    Info: Found entity 1: g48_flash_read_control
+Info: Found 2 design units, including 1 entities, in source file g48_tempo.vhd
+    Info: Found design unit 1: g48_Tempo-implementation
+    Info: Found entity 1: g48_Tempo
+Info: Found 2 design units, including 1 entities, in source file g48_note_timer.vhd
+    Info: Found design unit 1: g48_note_timer-arch
+    Info: Found entity 1: g48_note_timer
+Info: Found 2 design units, including 1 entities, in source file g48_music_box.vhd
+    Info: Found design unit 1: g48_music_box-implementation
+    Info: Found entity 1: g48_music_box
+Info: Elaborating entity "g48_music_box" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at g48_music_box.vhd(48): object "data_size_o" assigned a value but never read
+Info: Elaborating entity "LPM_ROM" for hierarchy "LPM_ROM:song_table1"
+Info: Elaborated megafunction instantiation "LPM_ROM:song_table1"
+Info: Instantiated megafunction "LPM_ROM:song_table1" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "16"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "256"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "UNREGISTERED"
+    Info: Parameter "LPM_FILE" = "g48_demo_song.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_ROM"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altrom" for hierarchy "LPM_ROM:song_table1|altrom:srom"
+Info: Elaborated megafunction instantiation "LPM_ROM:song_table1|altrom:srom", which is child of megafunction instantiation "LPM_ROM:song_table1"
+Info: Elaborating entity "altsyncram" for hierarchy "LPM_ROM:song_table1|altrom:srom|altsyncram:rom_block"
+Info: Elaborated megafunction instantiation "LPM_ROM:song_table1|altrom:srom|altsyncram:rom_block", which is child of megafunction instantiation "LPM_ROM:song_table1"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_qo01.tdf
+    Info: Found entity 1: altsyncram_qo01
+Info: Elaborating entity "altsyncram_qo01" for hierarchy "LPM_ROM:song_table1|altrom:srom|altsyncram:rom_block|altsyncram_qo01:auto_generated"
+Info: Elaborating entity "LPM_ROM" for hierarchy "LPM_ROM:song_table2"
+Info: Elaborated megafunction instantiation "LPM_ROM:song_table2"
+Info: Instantiated megafunction "LPM_ROM:song_table2" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "16"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "256"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "UNREGISTERED"
+    Info: Parameter "LPM_FILE" = "g48_mary_lamb.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_ROM"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altrom" for hierarchy "LPM_ROM:song_table2|altrom:srom"
+Info: Elaborated megafunction instantiation "LPM_ROM:song_table2|altrom:srom", which is child of megafunction instantiation "LPM_ROM:song_table2"
+Info: Elaborating entity "altsyncram" for hierarchy "LPM_ROM:song_table2|altrom:srom|altsyncram:rom_block"
+Info: Elaborated megafunction instantiation "LPM_ROM:song_table2|altrom:srom|altsyncram:rom_block", which is child of megafunction instantiation "LPM_ROM:song_table2"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_jo01.tdf
+    Info: Found entity 1: altsyncram_jo01
+Info: Elaborating entity "altsyncram_jo01" for hierarchy "LPM_ROM:song_table2|altrom:srom|altsyncram:rom_block|altsyncram_jo01:auto_generated"
+Info: Elaborating entity "g48_Tempo" for hierarchy "g48_Tempo:get_tempo"
+Info: Elaborating entity "LPM_ROM" for hierarchy "g48_Tempo:get_tempo|LPM_ROM:tempo_table"
+Info: Elaborated megafunction instantiation "g48_Tempo:get_tempo|LPM_ROM:tempo_table"
+Info: Instantiated megafunction "g48_Tempo:get_tempo|LPM_ROM:tempo_table" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "22"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "256"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "UNREGISTERED"
+    Info: Parameter "LPM_FILE" = "g48_tempo2.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_ROM"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altrom" for hierarchy "g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom"
+Info: Elaborated megafunction instantiation "g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom", which is child of megafunction instantiation "g48_Tempo:get_tempo|LPM_ROM:tempo_table"
+Info: Elaborating entity "altsyncram" for hierarchy "g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom|altsyncram:rom_block"
+Info: Elaborated megafunction instantiation "g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom|altsyncram:rom_block", which is child of megafunction instantiation "g48_Tempo:get_tempo|LPM_ROM:tempo_table"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_jd01.tdf
+    Info: Found entity 1: altsyncram_jd01
+Info: Elaborating entity "altsyncram_jd01" for hierarchy "g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom|altsyncram:rom_block|altsyncram_jd01:auto_generated"
+Info: Elaborating entity "LPM_COUNTER" for hierarchy "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component"
+Info: Elaborated megafunction instantiation "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component"
+Info: Instantiated megafunction "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "22"
+    Info: Parameter "LPM_MODULUS" = "0"
+    Info: Parameter "LPM_DIRECTION" = "DOWN"
+    Info: Parameter "LPM_AVALUE" = "UNUSED"
+    Info: Parameter "LPM_SVALUE" = "UNUSED"
+    Info: Parameter "LPM_PORT_UPDOWN" = "PORT_UNUSED"
+    Info: Parameter "LPM_PVALUE" = "UNUSED"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_v8l.tdf
+    Info: Found entity 1: cntr_v8l
+Info: Elaborating entity "cntr_v8l" for hierarchy "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component|cntr_v8l:auto_generated"
+Info: Elaborating entity "LPM_COUNTER" for hierarchy "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2"
+Info: Elaborated megafunction instantiation "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2"
+Info: Instantiated megafunction "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "5"
+    Info: Parameter "LPM_MODULUS" = "0"
+    Info: Parameter "LPM_DIRECTION" = "DOWN"
+    Info: Parameter "LPM_AVALUE" = "UNUSED"
+    Info: Parameter "LPM_SVALUE" = "UNUSED"
+    Info: Parameter "LPM_PORT_UPDOWN" = "PORT_UNUSED"
+    Info: Parameter "LPM_PVALUE" = "UNUSED"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_g7l.tdf
+    Info: Found entity 1: cntr_g7l
+Info: Elaborating entity "cntr_g7l" for hierarchy "g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2|cntr_g7l:auto_generated"
+Info: Elaborating entity "g48_note_timer" for hierarchy "g48_note_timer:note_time"
+Info: Elaborating entity "g48_audio_flash_control" for hierarchy "g48_audio_flash_control:flash_control"
+Info: Elaborating entity "g48_flash_read_control" for hierarchy "g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash"
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(192): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(194): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(196): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(198): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(200): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(202): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(204): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(206): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "Altera_UP_Flash_Memory_IP_Core_Standalone" for hierarchy "g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem"
+Info: Elaborating entity "Altera_UP_Flash_Memory_User_Interface" for hierarchy "g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui"
+Info: Elaborating entity "Altera_UP_Flash_Memory_Controller" for hierarchy "g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm"
+Info: Elaborating entity "g48_audio_interface" for hierarchy "g48_audio_flash_control:flash_control|g48_audio_interface:audioOut"
+Info: Elaborating entity "g48_7_segment_decoder" for hierarchy "g48_7_segment_decoder:S0"
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[21]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[20]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[19]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[18]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[17]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[16]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "g48_Tempo:get_tempo|lpm_rom:tempo_table|otri[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table2|otri[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[15]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[14]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[13]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[12]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[11]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[10]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[9]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[8]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[7]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[6]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[5]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[4]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[3]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "lpm_rom:song_table1|otri[0]" feeding internal logic into a wire
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "g48_audio_flash_control:flash_control|Mult0"
+Info: Elaborated megafunction instantiation "g48_audio_flash_control:flash_control|lpm_mult:Mult0"
+Info: Instantiated megafunction "g48_audio_flash_control:flash_control|lpm_mult:Mult0" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "16"
+    Info: Parameter "LPM_WIDTHB" = "4"
+    Info: Parameter "LPM_WIDTHP" = "20"
+    Info: Parameter "LPM_WIDTHR" = "20"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Found 1 design units, including 1 entities, in source file db/mult_rvs.tdf
+    Info: Found entity 1: mult_rvs
+Info: Ignored 72 buffer(s)
+    Info: Ignored 2 CARRY_SUM buffer(s)
+    Info: Ignored 70 SOFT buffer(s)
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Critical Warning: Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|bit_count[2] will power up to High
+    Critical Warning (18010): Register g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|bit_count[0] will power up to High
+    Critical Warning (18010): Register g48_audio_flash_control:flash_control|g48_audio_interface:audioOut|bit_count[1] will power up to High
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_SECTOR" lost all its fanouts during netlist optimizations.
+    Info: Register "g48_audio_flash_control:flash_control|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_CHIP" lost all its fanouts during netlist optimizations.
+Info: Found the following redundant logic cells in design
+    Info (17048): Logic cell "g48_Tempo:get_tempo|count[4]"
+    Info (17048): Logic cell "g48_Tempo:get_tempo|count[3]"
+    Info (17048): Logic cell "g48_Tempo:get_tempo|count[2]"
+    Info (17048): Logic cell "g48_Tempo:get_tempo|count[1]"
+    Info (17048): Logic cell "g48_Tempo:get_tempo|count[0]"
+Info: Implemented 978 device resources after synthesis - the final resource count might be different
+    Info: Implemented 17 input pins
+    Info: Implemented 62 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 837 logic cells
+    Info: Implemented 54 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 68 warnings
+    Info: Peak virtual memory: 256 megabytes
+    Info: Processing ended: Mon Apr 13 14:38:35 2015
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:06
+
+

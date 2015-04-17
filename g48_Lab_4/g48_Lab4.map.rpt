@@ -1,0 +1,623 @@
+Analysis & Synthesis report for g48_Lab4
+Sun Apr 05 17:08:19 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |g48_Sound_Testbed|g48_audio_interface:audioOut|state
+  9. State Machine - |g48_Sound_Testbed|g48_audio_interface:audioOut|state2
+ 10. State Machine - |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|present_state
+ 11. State Machine - |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: Top-level Entity: |g48_Sound_Testbed
+ 18. Parameter Settings for User Entity Instance: Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem
+ 19. Parameter Settings for User Entity Instance: Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui
+ 20. Parameter Settings for User Entity Instance: Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm
+ 21. Port Connectivity Checks: "g48_audio_interface:audioOut"
+ 22. Port Connectivity Checks: "Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem"
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Apr 05 17:08:19 2015         ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
+; Revision Name                      ; g48_Lab4                                      ;
+; Top-level Entity Name              ; g48_Sound_Testbed                             ;
+; Family                             ; Cyclone II                                    ;
+; Total logic elements               ; 608                                           ;
+;     Total combinational functions  ; 496                                           ;
+;     Dedicated logic registers      ; 309                                           ;
+; Total registers                    ; 309                                           ;
+; Total pins                         ; 73                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; g48_Sound_Testbed  ; g48_Lab4           ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++-----------------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+
+; File Name with User-Entered Path              ; Used in Netlist ; File Type       ; File Name with Absolute Path                                            ;
++-----------------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+
+; Altera_UP_Flash_Memory_Controller.vhd         ; yes             ; User VHDL File  ; P:/DSD/Projects/g48_Lab_4/Altera_UP_Flash_Memory_Controller.vhd         ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone.vhd ; yes             ; User VHDL File  ; P:/DSD/Projects/g48_Lab_4/Altera_UP_Flash_Memory_IP_Core_Standalone.vhd ;
+; Altera_UP_Flash_Memory_User_Interface.vhd     ; yes             ; User VHDL File  ; P:/DSD/Projects/g48_Lab_4/Altera_UP_Flash_Memory_User_Interface.vhd     ;
+; g48_flash_read_control.vhd                    ; yes             ; User VHDL File  ; P:/DSD/Projects/g48_Lab_4/g48_flash_read_control.vhd                    ;
+; g48_audio_interface.vhd                       ; yes             ; User VHDL File  ; P:/DSD/Projects/g48_Lab_4/g48_audio_interface.vhd                       ;
+; g48_Sound_Testbed.vhd                         ; yes             ; User VHDL File  ; P:/DSD/Projects/g48_Lab_4/g48_Sound_Testbed.vhd                         ;
++-----------------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 608    ;
+;                                             ;        ;
+; Total combinational functions               ; 496    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 226    ;
+;     -- 3 input functions                    ; 155    ;
+;     -- <=2 input functions                  ; 115    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 377    ;
+;     -- arithmetic mode                      ; 119    ;
+;                                             ;        ;
+; Total registers                             ; 309    ;
+;     -- Dedicated logic registers            ; 309    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 73     ;
+; Maximum fan-out node                        ; clk_50 ;
+; Maximum fan-out                             ; 309    ;
+; Total fan-out                               ; 2820   ;
+; Average fan-out                             ; 3.21   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+; |g48_Sound_Testbed                                      ; 496 (1)           ; 309 (0)      ; 0           ; 0            ; 0       ; 0         ; 73   ; 0            ; |g48_Sound_Testbed                                                                                             ; work         ;
+;    |Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem| ; 97 (2)            ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem                                          ;              ;
+;       |Altera_UP_Flash_Memory_Controller:fm|            ; 27 (27)           ; 52 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm     ;              ;
+;       |Altera_UP_Flash_Memory_User_Interface:ui|        ; 68 (68)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui ;              ;
+;    |g48_audio_interface:audioOut|                       ; 148 (148)         ; 87 (87)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_Sound_Testbed|g48_audio_interface:audioOut                                                                ;              ;
+;    |g48_flash_read_control:readFlash|                   ; 250 (250)         ; 111 (111)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g48_Sound_Testbed|g48_flash_read_control:readFlash                                                            ;              ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |g48_Sound_Testbed|g48_audio_interface:audioOut|state                                                                                                                                                                                                                                                                                            ;
++----------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------+------------+------------+----------+----------+----------+----------------+----------------+
+; Name           ; state.send ; state.sw2b3 ; state.sw2b2 ; state.sw2b1 ; state.sw1b3 ; state.sw1b2 ; state.sw1b1 ; state.sack33 ; state.sack32 ; state.sack31 ; state.sack23 ; state.sack22 ; state.sack21 ; state.sack13 ; state.sack12 ; state.sack11 ; state.sab3 ; state.sab2 ; state.sab1 ; state.s2 ; state.s1 ; state.s0 ; state.sw_init1 ; state.sw_init0 ;
++----------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------+------------+------------+----------+----------+----------+----------------+----------------+
+; state.sw_init0 ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 0              ;
+; state.sw_init1 ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 1              ; 1              ;
+; state.s0       ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 1        ; 0              ; 1              ;
+; state.s1       ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 1        ; 0        ; 0              ; 1              ;
+; state.s2       ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1        ; 0        ; 0        ; 0              ; 1              ;
+; state.sab1     ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sab2     ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sab3     ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack11   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack12   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack13   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack21   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack22   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack23   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack31   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack32   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sack33   ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw1b1    ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw1b2    ; 0          ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw1b3    ; 0          ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw2b1    ; 0          ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw2b2    ; 0          ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.sw2b3    ; 0          ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
+; state.send     ; 1          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0        ; 0        ; 0        ; 0              ; 1              ;
++----------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------+------------+------------+----------+----------+----------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |g48_Sound_Testbed|g48_audio_interface:audioOut|state2                  ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name            ; state2.sw_write ; state2.sw_ready ; state2.sw_init1 ; state2.sw_init0 ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; state2.sw_init0 ; 0               ; 0               ; 0               ; 0               ;
+; state2.sw_init1 ; 0               ; 0               ; 1               ; 1               ;
+; state2.sw_ready ; 0               ; 1               ; 0               ; 1               ;
+; state2.sw_write ; 1               ; 0               ; 0               ; 1               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|present_state                         ;
++------------------------------+-----------------------------+-----------------------+----------------------+------------------------------+-----------------------+
+; Name                         ; present_state.s_ACKNOWLEDGE ; present_state.s_WRITE ; present_state.s_READ ; present_state.s_WAIT_COMMAND ; present_state.s_RESET ;
++------------------------------+-----------------------------+-----------------------+----------------------+------------------------------+-----------------------+
+; present_state.s_RESET        ; 0                           ; 0                     ; 0                    ; 0                            ; 0                     ;
+; present_state.s_WAIT_COMMAND ; 0                           ; 0                     ; 0                    ; 1                            ; 1                     ;
+; present_state.s_READ         ; 0                           ; 0                     ; 1                    ; 0                            ; 1                     ;
+; present_state.s_WRITE        ; 0                           ; 1                     ; 0                    ; 0                            ; 1                     ;
+; present_state.s_ACKNOWLEDGE  ; 1                           ; 0                     ; 0                    ; 0                            ; 1                     ;
++------------------------------+-----------------------------+-----------------------+----------------------+------------------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state                                                                                                                                                                                                                                                                                                                                                                                                                ;
++---------------------------------------+-----------------------------+----------------------------------+--------------------------------------+-----------------------------------+-----------------------------+----------------------------+------------------------------+--------------------------------------+------------------------------------+-----------------------------------+-----------------------------+---------------------------------------+-----------------------------------+----------------------+------------------------------+
+; Name                                  ; present_state.s_ACKNOWLEDGE ; present_state.s_CHECK_ERASE_DONE ; present_state.s_ERASE_WAIT_COMPLETED ; present_state.s_ERASE_CYCLE_DELAY ; present_state.s_ERASE_CYCLE ; present_state.s_ERASE_CHIP ; present_state.s_ERASE_SECTOR ; present_state.s_CHECK_WRITE_COMPLETE ; present_state.s_WAIT_UNTIL_WRITTEN ; present_state.s_WRITE_CYCLE_DELAY ; present_state.s_WRITE_CYCLE ; present_state.s_CHECK_MEMORY_CONTENTS ; present_state.s_READ_BEFORE_WRITE ; present_state.s_READ ; present_state.s_WAIT_COMMAND ;
++---------------------------------------+-----------------------------+----------------------------------+--------------------------------------+-----------------------------------+-----------------------------+----------------------------+------------------------------+--------------------------------------+------------------------------------+-----------------------------------+-----------------------------+---------------------------------------+-----------------------------------+----------------------+------------------------------+
+; present_state.s_WAIT_COMMAND          ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 0                            ;
+; present_state.s_READ                  ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 1                    ; 1                            ;
+; present_state.s_READ_BEFORE_WRITE     ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 1                                 ; 0                    ; 1                            ;
+; present_state.s_CHECK_MEMORY_CONTENTS ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 1                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_WRITE_CYCLE           ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 1                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_WRITE_CYCLE_DELAY     ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 1                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_WAIT_UNTIL_WRITTEN    ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 1                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_CHECK_WRITE_COMPLETE  ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 1                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_SECTOR          ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 1                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_CHIP            ; 0                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 1                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_CYCLE           ; 0                           ; 0                                ; 0                                    ; 0                                 ; 1                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_CYCLE_DELAY     ; 0                           ; 0                                ; 0                                    ; 1                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ERASE_WAIT_COMPLETED  ; 0                           ; 0                                ; 1                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_CHECK_ERASE_DONE      ; 0                           ; 1                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
+; present_state.s_ACKNOWLEDGE           ; 1                           ; 0                                ; 0                                    ; 0                                 ; 0                           ; 0                          ; 0                            ; 0                                    ; 0                                  ; 0                                 ; 0                           ; 0                                     ; 0                                 ; 0                    ; 1                            ;
++---------------------------------------+-----------------------------+----------------------------------+--------------------------------------+-----------------------------------+-----------------------------+----------------------------+------------------------------+--------------------------------------+------------------------------------+-----------------------------------+-----------------------------+---------------------------------------+-----------------------------------+----------------------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                     ; Reason for Removal                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[0..7]                                                                 ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|erase_reg                                                                      ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|write_reg                                                                      ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[0..7]                        ; Stuck at GND due to stuck port data_in                                                                                     ;
+; g48_audio_interface:audioOut|LRDATA[0..9,26..33]                                                                                  ; Stuck at GND due to stuck port data_in                                                                                     ;
+; g48_audio_interface:audioOut|SCI_WORD1[5..7]                                                                                      ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_byte[0..3,6]               ; Merged with Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_byte[7] ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_byte[4..5,7]               ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|last_erase_address[0..21]             ; Stuck at GND due to stuck port data_in                                                                                     ;
+; g48_audio_interface:audioOut|LRDATA[25]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[49]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[24]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[48]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[23]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[47]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[22]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[46]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[21]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[45]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[20]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[44]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[19]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[43]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[18]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[42]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[17]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[41]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[16]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[40]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[15]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[39]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[14]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[38]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[13]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[37]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[12]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[36]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[11]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[35]                                                                        ;
+; g48_audio_interface:audioOut|LRDATA[10]                                                                                           ; Merged with g48_audio_interface:audioOut|LRDATA[34]                                                                        ;
+; g48_audio_interface:audioOut|SCI_WORD2[7]                                                                                         ; Merged with g48_audio_interface:audioOut|SCI_WORD1[0]                                                                      ;
+; g48_audio_interface:audioOut|SCI_WORD2[5]                                                                                         ; Merged with g48_audio_interface:audioOut|SCI_WORD2[6]                                                                      ;
+; g48_audio_interface:audioOut|SCI_WORD2[1]                                                                                         ; Merged with g48_audio_interface:audioOut|SCI_WORD1[4]                                                                      ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_SECTOR          ; Lost fanout                                                                                                                ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_CHIP            ; Lost fanout                                                                                                                ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_READ_BEFORE_WRITE     ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_CHECK_MEMORY_CONTENTS ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Total Number of Removed Registers = 92                                                                                            ;                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                   ;
++-------------------------------------------------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                 ; Reason for Removal        ; Registers Removed due to This Register                                                                                            ;
++-------------------------------------------------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[0]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[0]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[1]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[1]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[2]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[2]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[3]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[3]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[4]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[4]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[5]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[5]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[6]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[6]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|data_reg[7]                                                                ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|data_reg[7]                           ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_READ_BEFORE_WRITE ; Stuck at GND              ; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_CHECK_MEMORY_CONTENTS ;
+;                                                                                                                               ; due to stuck port data_in ;                                                                                                                                   ;
++-------------------------------------------------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 309   ;
+; Number of registers using Synchronous Clear  ; 14    ;
+; Number of registers using Synchronous Load   ; 45    ;
+; Number of registers using Asynchronous Clear ; 243   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 197   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                        ;
++-----------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                         ; Fan out ;
++-----------------------------------------------------------------------------------------------------------+---------+
+; g48_flash_read_control:readFlash|sample_address[25]                                                       ; 3       ;
+; g48_flash_read_control:readFlash|sample_address[26]                                                       ; 3       ;
+; g48_flash_read_control:readFlash|sample_address[28]                                                       ; 3       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[0]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[1]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[2]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[3]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[4]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[5]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[6]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[7]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[8]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[9]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[10] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[11] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[12] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[13] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[14] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[15] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[16] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[17] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[18] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[19] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[20] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[21] ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_ce_n        ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_oe_n        ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_we_n        ; 1       ;
+; g48_audio_interface:audioOut|Mcount                                                                       ; 7       ;
+; g48_audio_interface:audioOut|Bcount[2]                                                                    ; 5       ;
+; g48_audio_interface:audioOut|bit_count[0]                                                                 ; 11      ;
+; g48_audio_interface:audioOut|bit_count[1]                                                                 ; 10      ;
+; g48_audio_interface:audioOut|bit_count[2]                                                                 ; 6       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[0]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[1]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[2]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[3]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[4]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[5]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[6]  ; 1       ;
+; Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[7]  ; 1       ;
+; g48_flash_read_control:readFlash|iflash_address[3]                                                        ; 2       ;
+; g48_flash_read_control:readFlash|iflash_address[5]                                                        ; 2       ;
+; g48_audio_interface:audioOut|SCI_READY                                                                    ; 5       ;
+; g48_flash_read_control:readFlash|init                                                                     ; 2       ;
+; Total number of inverted registers = 45                                                                   ;         ;
++-----------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|data_size[15]                                                           ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|data_size[18]                                                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|sample_data[12]                                                         ;
+; 3:1                ; 42 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|sample_address[18]                                                      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |g48_Sound_Testbed|g48_audio_interface:audioOut|SCI_WORD1[2]                                                                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|sample_data[4]                                                          ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_audio_interface:audioOut|SCI_WORD1[4]                                                                ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|data_size[5]                                                            ;
+; 12:1               ; 19 bits   ; 152 LEs       ; 19 LEs               ; 133 LEs                ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|iflash_address[14]                                                      ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|state[0]                                                                ;
+; 19:1               ; 6 bits    ; 72 LEs        ; 6 LEs                ; 66 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_audio_interface:audioOut|clk_count[4]                                                                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|sample_address[28]                                                      ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|flash_address[1] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|data_to_flash[5] ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 2 LEs                ; 14 LEs                 ; Yes        ; |g48_Sound_Testbed|g48_flash_read_control:readFlash|iflash_address[3]                                                       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |g48_Sound_Testbed|g48_audio_interface:audioOut|bit_count[0]                                                                ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |g48_Sound_Testbed|g48_audio_interface:audioOut|Selector7                                                                   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |g48_Sound_Testbed|g48_audio_interface:audioOut|Selector4                                                                   ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; No         ; |g48_Sound_Testbed|g48_audio_interface:audioOut|Selector12                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |g48_Sound_Testbed ;
++----------------------------+-------+----------------------------------------------+
+; Parameter Name             ; Value ; Type                                         ;
++----------------------------+-------+----------------------------------------------+
+; FLASH_MEMORY_ADDRESS_WIDTH ; 22    ; Signed Integer                               ;
+; FLASH_MEMORY_DATA_WIDTH    ; 8     ; Signed Integer                               ;
++----------------------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem ;
++----------------------------+-------+------------------------------------------------------------+
+; Parameter Name             ; Value ; Type                                                       ;
++----------------------------+-------+------------------------------------------------------------+
+; FLASH_MEMORY_ADDRESS_WIDTH ; 22    ; Signed Integer                                             ;
+; FLASH_MEMORY_DATA_WIDTH    ; 8     ; Signed Integer                                             ;
++----------------------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui ;
++----------------------------+-------+-----------------------------------------------------------------------------------------------------+
+; Parameter Name             ; Value ; Type                                                                                                ;
++----------------------------+-------+-----------------------------------------------------------------------------------------------------+
+; flash_memory_address_width ; 22    ; Signed Integer                                                                                      ;
+; flash_memory_data_width    ; 8     ; Signed Integer                                                                                      ;
++----------------------------+-------+-----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm ;
++----------------------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name             ; Value ; Type                                                                                            ;
++----------------------------+-------+-------------------------------------------------------------------------------------------------+
+; flash_memory_address_width ; 22    ; Signed Integer                                                                                  ;
+; flash_memory_data_width    ; 8     ; Signed Integer                                                                                  ;
++----------------------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "g48_audio_interface:audioOut" ;
++-------------+-------+----------+-------------------------+
+; Port        ; Type  ; Severity ; Details                 ;
++-------------+-------+----------+-------------------------+
+; ldata[7..0] ; Input ; Info     ; Stuck at GND            ;
+; rdata[7..0] ; Input ; Info     ; Stuck at GND            ;
+; w_en        ; Input ; Info     ; Stuck at VCC            ;
++-------------+-------+----------+-------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem" ;
++---------+-------+----------+---------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                           ;
++---------+-------+----------+---------------------------------------------------+
+; i_data  ; Input ; Info     ; Stuck at GND                                      ;
+; i_write ; Input ; Info     ; Stuck at GND                                      ;
+; i_erase ; Input ; Info     ; Stuck at GND                                      ;
++---------+-------+----------+---------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Sun Apr 05 17:08:15 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g48_Lab_4 -c g48_Lab4
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 2 design units, including 1 entities, in source file altera_up_flash_memory_controller.vhd
+    Info: Found design unit 1: Altera_UP_Flash_Memory_Controller-rtl
+    Info: Found entity 1: Altera_UP_Flash_Memory_Controller
+Info: Found 2 design units, including 1 entities, in source file altera_up_flash_memory_ip_core_standalone.vhd
+    Info: Found design unit 1: Altera_UP_Flash_Memory_IP_Core_Standalone-rtl
+    Info: Found entity 1: Altera_UP_Flash_Memory_IP_Core_Standalone
+Info: Found 2 design units, including 1 entities, in source file altera_up_flash_memory_user_interface.vhd
+    Info: Found design unit 1: Altera_UP_Flash_Memory_User_Interface-rtl
+    Info: Found entity 1: Altera_UP_Flash_Memory_User_Interface
+Info: Found 2 design units, including 1 entities, in source file g48_7_segment_decoder.vhd
+    Info: Found design unit 1: g48_7_segment_decoder-implementation
+    Info: Found entity 1: g48_7_segment_decoder
+Info: Found 2 design units, including 1 entities, in source file g48_flash_read_control.vhd
+    Info: Found design unit 1: g48_flash_read_control-a
+    Info: Found entity 1: g48_flash_read_control
+Info: Found 2 design units, including 1 entities, in source file g48_note_timer.vhd
+    Info: Found design unit 1: g48_note_timer-arch
+    Info: Found entity 1: g48_note_timer
+Info: Found 2 design units, including 1 entities, in source file g48_tempo_testbed.vhd
+    Info: Found design unit 1: g48_Tempo_Testbed-implementation
+    Info: Found entity 1: g48_Tempo_Testbed
+Info: Found 2 design units, including 1 entities, in source file g48_tempo_decoder.vhd
+    Info: Found design unit 1: g48_tempo_decoder-arch
+    Info: Found entity 1: g48_tempo_decoder
+Info: Found 2 design units, including 1 entities, in source file g48_tempo.vhd
+    Info: Found design unit 1: g48_Tempo-implementation
+    Info: Found entity 1: g48_Tempo
+Info: Found 2 design units, including 1 entities, in source file g48_note_timer_testbed.vhd
+    Info: Found design unit 1: g48_note_timer_testbed-arch
+    Info: Found entity 1: g48_note_timer_testbed
+Info: Found 2 design units, including 1 entities, in source file g48_flash_testbed.vhd
+    Info: Found design unit 1: g48_Flash_Testbed-implementation
+    Info: Found entity 1: g48_Flash_Testbed
+Info: Found 2 design units, including 1 entities, in source file g48_audio_interface.vhd
+    Info: Found design unit 1: g48_audio_interface-a
+    Info: Found entity 1: g48_audio_interface
+Info: Found 2 design units, including 1 entities, in source file g48_sound_testbed.vhd
+    Info: Found design unit 1: g48_Sound_Testbed-implementation
+    Info: Found entity 1: g48_Sound_Testbed
+Info: Elaborating entity "g48_Sound_Testbed" for the top level hierarchy
+Info: Elaborating entity "g48_flash_read_control" for hierarchy "g48_flash_read_control:readFlash"
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(192): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(194): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(196): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(198): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(200): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(202): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(204): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g48_flash_read_control.vhd(206): signal "fmax" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "Altera_UP_Flash_Memory_IP_Core_Standalone" for hierarchy "Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem"
+Info: Elaborating entity "Altera_UP_Flash_Memory_User_Interface" for hierarchy "Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui"
+Info: Elaborating entity "Altera_UP_Flash_Memory_Controller" for hierarchy "Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm"
+Info: Elaborating entity "g48_audio_interface" for hierarchy "g48_audio_interface:audioOut"
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Critical Warning: Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register g48_audio_interface:audioOut|bit_count[2] will power up to High
+    Critical Warning (18010): Register g48_audio_interface:audioOut|bit_count[0] will power up to High
+    Critical Warning (18010): Register g48_audio_interface:audioOut|bit_count[1] will power up to High
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_SECTOR" lost all its fanouts during netlist optimizations.
+    Info: Register "Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state.s_ERASE_CHIP" lost all its fanouts during netlist optimizations.
+Info: Implemented 687 device resources after synthesis - the final resource count might be different
+    Info: Implemented 11 input pins
+    Info: Implemented 54 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 614 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 236 megabytes
+    Info: Processing ended: Sun Apr 05 17:08:19 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+

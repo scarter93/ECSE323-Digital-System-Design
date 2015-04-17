@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Apr 13 14:38:35 2015
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : g48_Lab_5
+Top-level Entity Name : g48_music_box
+Family : Cyclone II
+Total logic elements : 831
+    Total combinational functions : 734
+    Dedicated logic registers : 381
+Total registers : 381
+Total pins : 87
+Total virtual pins : 0
+Total memory bits : 13,824
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

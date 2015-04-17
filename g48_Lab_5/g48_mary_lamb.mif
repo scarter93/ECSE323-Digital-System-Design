@@ -1,0 +1,65 @@
+-- Copyright (C) 1991-2010 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+
+-- Quartus II generated Memory Initialization File (.mif)
+
+WIDTH=16;
+DEPTH=256;
+
+ADDRESS_RADIX=BIN;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	000000000  :   0100000010110100;
+	000000001  :   0100000010110010;
+	000000010  :   0100000010110000;
+	000000011  :   0100000010110010;
+	[000000100..000000101]  :   0100000010110100;
+	000000110  :   0100000100110100;
+	[000000111..000001000]  :   0100000010110010;
+	000001001  :   0100000100110010;
+	000001010  :   0100000010110100;
+	000001011  :   0100000010110111;
+	000001100  :   0100000100110111;
+	000001101  :   0100000010110100;
+	000001110  :   0100000010110010;
+	000001111  :   0100000010110000;
+	000010000  :   0100000010110010;
+	[000010001..000010100]  :   0100000010110100;
+	000010101  :   0100000010110010;
+	[000010110..000010111]  :   0100000010110100;
+	000011000  :   0100000010110010;
+	000011001  :   0100001000110000;
+	000011010  :   0100000010110100;
+	000011011  :   0100000010110010;
+	000011100  :   0100000010110000;
+	000011101  :   0100000010110010;
+	[000011110..000011111]  :   0100000010110100;
+	000100000  :   0100000100110100;
+	[000100001..000100010]  :   0100000010110010;
+	000100011  :   0100000100110010;
+	000100100  :   0100000010110100;
+	000100101  :   0100000010110111;
+	000100110  :   0100000100110111;
+	000100111  :   0100000010110100;
+	000101000  :   0100000010110010;
+	000101001  :   0100000010110000;
+	000101010  :   0100000010110010;
+	[000101011..000101110]  :   0100000010110100;
+	000101111  :   0100000010110010;
+	[000110000..000110001]  :   0100000010110100;
+	000110010  :   0100000010110010;
+	000110011  :   0100001000110000;
+	[000110100..011111111]  :   1000000000000000;
+END;

@@ -1,0 +1,140 @@
+-- Audio Flash Control System 
+-- Stephen Carter & Greg Rohlicek (C) April 2015
+-- stephen.carter@mail.mcgill.ca	greg.rohlicek@mail.mcgill.ca
+
+library ieee;
+library lpm;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use lpm.lpm_components.all;
+
+USE ieee.std_logic_unsigned.all;
+
+entity g48_audio_flash_control is
+GENERIC (
+		FLASH_MEMORY_ADDRESS_WIDTH 		: INTEGER := 22;
+		FLASH_MEMORY_DATA_WIDTH 		: INTEGER := 8
+		);
+port(
+		clk_50, rst, init		: in std_logic;
+		trigger					: in std_logic;
+		loudness				: in signed(3 downto 0);
+		note					: in unsigned(3 downto 0);
+		octave 					: in unsigned(2 downto 0);
+		data_size_o				: out unsigned(21 downto 0);
+		
+		FL_ADDR					: out std_logic_vector(FLASH_MEMORY_ADDRESS_WIDTH-1 downto 0);
+		FL_DQ					: inout std_logic_vector(FLASH_MEMORY_DATA_WIDTH-1 downto 0);
+		FL_CE_N					: out std_logic;
+		FL_OE_N					: out std_logic;
+		FL_WE_N					: out std_logic;
+		FL_RST_N				: out std_logic;
+		
+		AUD_MCLK				: out std_logic;
+		AUD_BCLK				: out std_logic;
+		AUD_DACDAT				: out std_logic;
+		AUD_DACLRCK				: out std_logic;
+		I2C_SDAT				: out std_logic;
+		I2C_SCLK				: out std_logic
+	);
+		
+end g48_audio_flash_control;
+
+architecture implementation of g48_audio_flash_control is
+
+component g48_flash_read_control
+PORT
+	(	
+		clk_50		: IN std_logic; -- clk should be 50MHz 
+		rst			: IN std_logic;  
+		read_done	: IN std_logic; -- indication from the flash memory that the read operation is complete
+		step		: IN std_logic; -- signal from the audio interface indicating that the next sample should be read
+		odata		: IN std_logic_vector(7 downto 0); -- output of the flash memory
+		trigger 	: IN std_logic; -- trigger = 1 resets the sample address to the beginning
+		note 		: IN unsigned(3 downto 0); -- selects the note to be played (within an octave)
+		octave 		: IN unsigned(2 downto 0); -- the octave the note should be played at (4 octave range)
+		
+		flash_address	: OUT unsigned(21 downto 0); -- address for the flash memory read operation
+		read_start 		: OUT std_logic; -- request a read operation on the flash memory
+		sample_data		: OUT std_logic_vector(15 downto 0); -- a single 16 bit sample value, to be sent to the audio codec chip
+		data_size_o 	: OUT unsigned(21 downto 0) -- number of samples in the wave file (for display on the LEDs)
+	);
+end component;
+
+component Altera_UP_Flash_Memory_IP_Core_Standalone 
+	PORT 
+	(
+		-- Signals to local circuit 
+		i_clock 						: IN STD_LOGIC;
+		i_reset_n 						: IN STD_LOGIC;
+		i_address				 		: IN STD_LOGIC_VECTOR(FLASH_MEMORY_ADDRESS_WIDTH - 1 DOWNTO 0);
+		i_data 							: IN STD_LOGIC_VECTOR(FLASH_MEMORY_DATA_WIDTH - 1 DOWNTO 0);
+		i_read,	i_write, i_erase 		: IN STD_LOGIC;
+		o_data 							: OUT STD_LOGIC_VECTOR(FLASH_MEMORY_DATA_WIDTH - 1 DOWNTO 0);
+		o_done 							: OUT STD_LOGIC;
+		
+		-- Signals to be connected to Flash chip via proper I/O ports
+		FL_ADDR 								: OUT 	STD_LOGIC_VECTOR(FLASH_MEMORY_ADDRESS_WIDTH - 1 DOWNTO 0);
+		FL_DQ 									: INOUT 	STD_LOGIC_VECTOR(FLASH_MEMORY_DATA_WIDTH - 1 DOWNTO 0);
+		FL_CE_N, FL_OE_N, FL_WE_N, FL_RST_N 	: OUT 	STD_LOGIC
+	);
+end component;
+
+component g48_audio_interface
+port ( 
+		LDATA, RDATA	:      IN signed(23 downto 0); -- parallel external data inputs
+		clk : IN std_logic; -- clk should be 50MHz 
+		rst : IN std_logic;  
+		INIT : IN std_logic;  
+		W_EN : IN std_logic;
+		pulse :          	   OUT std_logic; -- sample sync pulse
+		AUD_MCLK :             OUT std_logic; -- codec master clock input
+		AUD_BCLK :             OUT std_logic; -- digital audio bit clock
+		AUD_DACDAT :           OUT std_logic; -- DAC data lines
+		AUD_DACLRCK :          OUT std_logic; -- DAC data left/right select
+		I2C_SDAT :             OUT std_logic; -- serial interface data line
+		I2C_SCLK :             OUT std_logic  -- serial interface clock
+	);
+end component;
+
+signal step 				: std_logic;
+signal odone				: std_logic;
+signal odata				: std_logic_vector(FLASH_MEMORY_DATA_WIDTH-1 downto 0);
+signal iwrite 				: std_logic;
+signal ierase				: std_logic;
+signal iread				: std_logic;
+signal idata				: std_logic_vector(FLASH_MEMORY_DATA_WIDTH-1 downto 0);
+signal iaddress				: unsigned(FLASH_MEMORY_ADDRESS_WIDTH-1 downto 0);
+signal iaddress_std			: std_logic_vector(FLASH_MEMORY_ADDRESS_WIDTH-1 downto 0);
+signal sample_data			: std_logic_vector(15 downto 0);
+
+begin
+idata <= "00000000";
+iwrite <= '0';
+ierase <= '0';
+
+iaddress_std <= std_logic_vector(iaddress);
+
+readFlash : g48_flash_read_control	--used to read the flash mem
+port map (	clk_50, 
+			not rst, 
+			odone, 
+			step, 
+			odata, 
+			trigger, 
+			note, 
+			octave, 
+			iaddress, 
+			iread, 
+			sample_data, 
+			data_size_o);
+			
+flashMem : Altera_UP_Flash_Memory_IP_Core_Standalone 
+port map (clk_50, rst, iaddress_std, idata, iread, iwrite, ierase, odata, odone, FL_ADDR, FL_DQ, FL_CE_N, FL_OE_N,FL_WE_N, FL_RST_N);
+
+audioOut : g48_audio_interface --interface for the output audio for the DE1 board
+port map(signed(signed(sample_data)* loudness)& "0000", signed(signed(sample_data)* loudness)& "0000", clk_50, not rst, not init, '1', step, AUD_MCLK, AUD_BCLK, AUD_DACDAT, AUD_DACLRCK, I2C_SDAT, I2C_SCLK);
+
+
+
+end implementation;

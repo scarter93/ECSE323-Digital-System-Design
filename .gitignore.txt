@@ -1,0 +1,6 @@
+.pdf/
+.png/
+.jpeg/
+.jpeg/
+.doc/
+.docx/

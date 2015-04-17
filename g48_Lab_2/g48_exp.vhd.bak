@@ -1,0 +1,43 @@
+-- This circuit computes P*2^(-N/12)
+
+-- Entity name: g48_exp
+
+-- Copyright (C) 2015 Stephen Carter, Greg Rochlicek
+-- Version 1.0
+-- Author: Stephen Carter, Greg Rohlicek; stephen.carter@mail.mcgill.ca, greg.rochicek@mail.mcgill.ca
+-- Date: February 02, 2015
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity g48_exp is
+	port (	notenumber 	: in unsigned(3 downto 0);
+			pitchperiod	: out unsigned(20 downto 0));
+			
+end g48_exp;
+
+architecture implementation of g48_exp is
+begin
+	
+	with notenumber select pitchperiod <=
+		"111111111111111111111" when "1111",
+		"111111111111111111111" when "1110",
+		"111111111111111111111" when "1101",
+		"111111111111111111111" when "1100",
+		"011000101101110110011" when "1011", -- 
+		"011010001011111010011" when "1010", -- 858067
+		"011011101111100100010" when "1001", -- 909090
+		"011101011001001001011" when "1000", -- 963147
+		"011111001001000000011" when "0111", -- 1020419
+		"100000111111100001000" when "0110", -- 1081096
+		"100010111101000100110" when "0101", -- 1145382
+		"100101000010000110010" when "0100", -- 1213490
+		"100111001111000010000" when "0011", -- 1285648
+		"101001100100010110000" when "0010", -- 1362096
+		"101100000010100010011" when "0001", -- 1443091
+		"101110101010001000110" when "0000"; -- 1528902
+		
+end implementation;
+	
+	

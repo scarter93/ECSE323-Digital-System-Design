@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Mar 19 13:57:03 2015
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
+Revision Name : g48_Lab_3
+Top-level Entity Name : g48_Tempo
+Family : Cyclone II
+Total logic elements : 1,041
+    Total combinational functions : 509
+    Dedicated logic registers : 848
+Total registers : 848
+Total pins : 18
+Total virtual pins : 0
+Total memory bits : 16,640
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

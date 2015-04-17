@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.757 ns
+From           : start
+To             : addr_rom[7]
+From Clock     : --
+To Clock       : clk_50
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.712 ns
+From           : music[3]
+To             : d0[2]
+From Clock     : clk_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.167 ns
+From           : bpm[7]
+To             : g48_Tempo:get_tempo|lpm_rom:tempo_table|altrom:srom|altsyncram:rom_block|altsyncram_jd01:auto_generated|ram_block1a4~porta_address_reg7
+From Clock     : --
+To Clock       : clk_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk_50'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 103.22 MHz ( period = 9.688 ns )
+From           : music[0]
+To             : g48_audio_flash_control:flash_control|g48_flash_read_control:readFlash|sample_address[44]
+From Clock     : clk_50
+To Clock       : clk_50
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="g48_Lab_5">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_music_box|LPM_ROM:song_table1|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_qo01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_music_box|g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component" CBX_FILE_NAME="cntr_v8l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_music_box|g48_Tempo:get_tempo|LPM_COUNTER:lpm_counter_component2" CBX_FILE_NAME="cntr_g7l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_music_box|g48_Tempo:get_tempo|LPM_ROM:tempo_table|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_jd01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_music_box|g48_audio_flash_control:flash_control|lpm_mult:Mult0" CBX_FILE_NAME="mult_rvs.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_music_box|LPM_ROM:song_table2|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_jo01.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

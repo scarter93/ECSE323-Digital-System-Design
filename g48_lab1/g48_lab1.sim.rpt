@@ -1,0 +1,322 @@
+Simulator report for g48_lab1
+Mon Jan 26 15:19:09 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 143 nodes    ;
+; Simulation Coverage         ;      88.11 % ;
+; Total Number of Transitions ; 1818         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                  ;
++--------------------------------------------------------------------------------------------+------------------------+---------------+
+; Option                                                                                     ; Setting                ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------+---------------+
+; Simulation mode                                                                            ; Functional             ; Timing        ;
+; Start time                                                                                 ; 0 ns                   ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF                   ;               ;
+; Vector input source                                                                        ; g48_Barrel_Shifter.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                     ; On            ;
+; Check outputs                                                                              ; Off                    ; Off           ;
+; Report simulation coverage                                                                 ; On                     ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                     ; On            ;
+; Display missing 1-value coverage report                                                    ; On                     ; On            ;
+; Display missing 0-value coverage report                                                    ; On                     ; On            ;
+; Detect setup and hold time violations                                                      ; Off                    ; Off           ;
+; Detect glitches                                                                            ; Off                    ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                    ; Off           ;
+; Generate Signal Activity File                                                              ; Off                    ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                    ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                    ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                     ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE             ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                    ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                     ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                   ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      88.11 % ;
+; Total nodes checked                                 ; 143          ;
+; Total output ports checked                          ; 143          ;
+; Total output ports with complete 1/0-value coverage ; 126          ;
+; Total output ports with no 1/0-value coverage       ; 15           ;
+; Total output ports with no 1-value coverage         ; 15           ;
+; Total output ports with no 0-value coverage         ; 17           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                  ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |g48_Barrel_Shifter|SHIFTED[13]             ; |g48_Barrel_Shifter|SHIFTED[13]             ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[12]             ; |g48_Barrel_Shifter|SHIFTED[12]             ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[11]             ; |g48_Barrel_Shifter|SHIFTED[11]             ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[10]             ; |g48_Barrel_Shifter|SHIFTED[10]             ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[9]              ; |g48_Barrel_Shifter|SHIFTED[9]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[8]              ; |g48_Barrel_Shifter|SHIFTED[8]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[7]              ; |g48_Barrel_Shifter|SHIFTED[7]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[6]              ; |g48_Barrel_Shifter|SHIFTED[6]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[5]              ; |g48_Barrel_Shifter|SHIFTED[5]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[4]              ; |g48_Barrel_Shifter|SHIFTED[4]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[3]              ; |g48_Barrel_Shifter|SHIFTED[3]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[2]              ; |g48_Barrel_Shifter|SHIFTED[2]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[1]              ; |g48_Barrel_Shifter|SHIFTED[1]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFTED[0]              ; |g48_Barrel_Shifter|SHIFTED[0]              ; pin_out          ;
+; |g48_Barrel_Shifter|SHIFT_AMOUNT[2]         ; |g48_Barrel_Shifter|SHIFT_AMOUNT[2]         ; out              ;
+; |g48_Barrel_Shifter|SHIFT_AMOUNT[1]         ; |g48_Barrel_Shifter|SHIFT_AMOUNT[1]         ; out              ;
+; |g48_Barrel_Shifter|SHIFT_AMOUNT[0]         ; |g48_Barrel_Shifter|SHIFT_AMOUNT[0]         ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[6]            ; |g48_Barrel_Shifter|UNSHIFTED[6]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[5]            ; |g48_Barrel_Shifter|UNSHIFTED[5]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[4]            ; |g48_Barrel_Shifter|UNSHIFTED[4]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[3]            ; |g48_Barrel_Shifter|UNSHIFTED[3]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[2]            ; |g48_Barrel_Shifter|UNSHIFTED[2]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[1]            ; |g48_Barrel_Shifter|UNSHIFTED[1]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[0]            ; |g48_Barrel_Shifter|UNSHIFTED[0]            ; out              ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst16  ; |g48_Barrel_Shifter|g48_busmux:inst|inst16  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst18  ; |g48_Barrel_Shifter|g48_busmux:inst|inst18  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst14  ; |g48_Barrel_Shifter|g48_busmux:inst|inst14  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst13  ; |g48_Barrel_Shifter|g48_busmux:inst|inst13  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst10  ; |g48_Barrel_Shifter|g48_busmux:inst|inst10  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst9   ; |g48_Barrel_Shifter|g48_busmux:inst|inst9   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst1   ; |g48_Barrel_Shifter|g48_busmux:inst|inst1   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst5   ; |g48_Barrel_Shifter|g48_busmux:inst|inst5   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst4   ; |g48_Barrel_Shifter|g48_busmux:inst|inst4   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst28  ; |g48_Barrel_Shifter|g48_busmux:inst|inst28  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst29  ; |g48_Barrel_Shifter|g48_busmux:inst|inst29  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst32  ; |g48_Barrel_Shifter|g48_busmux:inst|inst32  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst33  ; |g48_Barrel_Shifter|g48_busmux:inst|inst33  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst36  ; |g48_Barrel_Shifter|g48_busmux:inst|inst36  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst38  ; |g48_Barrel_Shifter|g48_busmux:inst|inst38  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst37  ; |g48_Barrel_Shifter|g48_busmux:inst|inst37  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst40  ; |g48_Barrel_Shifter|g48_busmux:inst|inst40  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst42  ; |g48_Barrel_Shifter|g48_busmux:inst|inst42  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst41  ; |g48_Barrel_Shifter|g48_busmux:inst|inst41  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst44  ; |g48_Barrel_Shifter|g48_busmux:inst|inst44  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst46  ; |g48_Barrel_Shifter|g48_busmux:inst|inst46  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst45  ; |g48_Barrel_Shifter|g48_busmux:inst|inst45  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst48  ; |g48_Barrel_Shifter|g48_busmux:inst|inst48  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst50  ; |g48_Barrel_Shifter|g48_busmux:inst|inst50  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst49  ; |g48_Barrel_Shifter|g48_busmux:inst|inst49  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst52  ; |g48_Barrel_Shifter|g48_busmux:inst|inst52  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst54  ; |g48_Barrel_Shifter|g48_busmux:inst|inst54  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst53  ; |g48_Barrel_Shifter|g48_busmux:inst|inst53  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst20  ; |g48_Barrel_Shifter|g48_busmux:inst|inst20  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst21  ; |g48_Barrel_Shifter|g48_busmux:inst|inst21  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst24  ; |g48_Barrel_Shifter|g48_busmux:inst|inst24  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst26  ; |g48_Barrel_Shifter|g48_busmux:inst|inst26  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst16 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst16 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst18 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst18 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst17 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst17 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst14 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst14 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst13 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst13 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst8  ; |g48_Barrel_Shifter|g48_busmux:inst3|inst8  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst10 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst10 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst9  ; |g48_Barrel_Shifter|g48_busmux:inst3|inst9  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst1  ; |g48_Barrel_Shifter|g48_busmux:inst3|inst1  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst4  ; |g48_Barrel_Shifter|g48_busmux:inst3|inst4  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst28 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst28 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst30 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst30 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst29 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst29 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst32 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst32 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst34 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst34 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst33 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst33 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst36 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst36 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst37 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst37 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst40 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst40 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst42 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst42 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst41 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst41 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst44 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst44 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst46 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst46 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst45 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst45 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst48 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst48 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst50 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst50 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst49 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst49 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst52 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst52 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst54 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst54 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst53 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst53 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst20 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst20 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst22 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst22 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst21 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst21 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst24 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst24 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst26 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst26 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst25 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst25 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst16 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst16 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst18 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst18 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst17 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst17 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst13 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst13 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst9  ; |g48_Barrel_Shifter|g48_busmux:inst4|inst9  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst1  ; |g48_Barrel_Shifter|g48_busmux:inst4|inst1  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst4  ; |g48_Barrel_Shifter|g48_busmux:inst4|inst4  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst28 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst28 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst30 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst30 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst29 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst29 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst32 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst32 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst34 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst34 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst33 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst33 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst36 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst36 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst38 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst38 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst37 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst37 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst40 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst40 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst42 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst42 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst41 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst41 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst44 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst44 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst46 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst46 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst45 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst45 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst48 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst48 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst50 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst50 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst49 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst49 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst52 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst52 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst54 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst54 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst53 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst53 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst20 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst20 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst22 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst22 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst21 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst21 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst24 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst24 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst26 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst26 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst4|inst25 ; |g48_Barrel_Shifter|g48_busmux:inst4|inst25 ; out0             ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                     ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |g48_Barrel_Shifter|UNSHIFTED[13]           ; |g48_Barrel_Shifter|UNSHIFTED[13]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[12]           ; |g48_Barrel_Shifter|UNSHIFTED[12]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[11]           ; |g48_Barrel_Shifter|UNSHIFTED[11]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[10]           ; |g48_Barrel_Shifter|UNSHIFTED[10]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[9]            ; |g48_Barrel_Shifter|UNSHIFTED[9]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[8]            ; |g48_Barrel_Shifter|UNSHIFTED[8]            ; out              ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst17  ; |g48_Barrel_Shifter|g48_busmux:inst|inst17  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst12  ; |g48_Barrel_Shifter|g48_busmux:inst|inst12  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst8   ; |g48_Barrel_Shifter|g48_busmux:inst|inst8   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst7   ; |g48_Barrel_Shifter|g48_busmux:inst|inst7   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst30  ; |g48_Barrel_Shifter|g48_busmux:inst|inst30  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst34  ; |g48_Barrel_Shifter|g48_busmux:inst|inst34  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst22  ; |g48_Barrel_Shifter|g48_busmux:inst|inst22  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst12 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst12 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst38 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst38 ; out0             ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                     ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |g48_Barrel_Shifter|UNSHIFTED[13]           ; |g48_Barrel_Shifter|UNSHIFTED[13]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[12]           ; |g48_Barrel_Shifter|UNSHIFTED[12]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[11]           ; |g48_Barrel_Shifter|UNSHIFTED[11]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[10]           ; |g48_Barrel_Shifter|UNSHIFTED[10]           ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[9]            ; |g48_Barrel_Shifter|UNSHIFTED[9]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[8]            ; |g48_Barrel_Shifter|UNSHIFTED[8]            ; out              ;
+; |g48_Barrel_Shifter|UNSHIFTED[7]            ; |g48_Barrel_Shifter|UNSHIFTED[7]            ; out              ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst17  ; |g48_Barrel_Shifter|g48_busmux:inst|inst17  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst12  ; |g48_Barrel_Shifter|g48_busmux:inst|inst12  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst8   ; |g48_Barrel_Shifter|g48_busmux:inst|inst8   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst7   ; |g48_Barrel_Shifter|g48_busmux:inst|inst7   ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst30  ; |g48_Barrel_Shifter|g48_busmux:inst|inst30  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst34  ; |g48_Barrel_Shifter|g48_busmux:inst|inst34  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst22  ; |g48_Barrel_Shifter|g48_busmux:inst|inst22  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst|inst25  ; |g48_Barrel_Shifter|g48_busmux:inst|inst25  ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst12 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst12 ; out0             ;
+; |g48_Barrel_Shifter|g48_busmux:inst3|inst38 ; |g48_Barrel_Shifter|g48_busmux:inst3|inst38 ; out0             ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Mon Jan 26 15:19:07 2015
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off g48_lab1 -c g48_lab1
+Info: Using vector source file "P:/DSD/Projects/g48_lab1/g48_Barrel_Shifter.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of g48_Barrel_Shifter.vwf called g48_lab1.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      88.11 %
+Info: Number of transitions in simulation is 1818
+Info: Vector file g48_Barrel_Shifter.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 151 megabytes
+    Info: Processing ended: Mon Jan 26 15:19:11 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:00
+
+

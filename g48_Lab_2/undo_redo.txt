@@ -1,0 +1,19 @@
+WED
+
+	Undo Commands
+	     1.	Insert Node or Bus
+	     2.	Delete Node, Bus or Waveform Divider
+	     3.	Count Value
+			 ***  *** 
+	     4.	Count Value
+			 *** 
+	     5.	Count Value
+			 *** 
+	     6.	Count Value
+			 *** 
+	     7.	Count Value
+			 ***  *** 
+	     8.	Count Value
+			 *** 
+
+

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Apr 05 17:08:26 2015
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
+Revision Name : g48_Lab4
+Top-level Entity Name : g48_Sound_Testbed
+Family : Cyclone II
+Device : EP2C20F484C7
+Timing Models : Final
+Total logic elements : 568 / 18,752 ( 3 % )
+    Total combinational functions : 496 / 18,752 ( 3 % )
+    Dedicated logic registers : 309 / 18,752 ( 2 % )
+Total registers : 309
+Total pins : 73 / 315 ( 23 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

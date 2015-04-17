@@ -1,0 +1,60 @@
+
+State Machine - |g48_Sound_Testbed|g48_audio_interface:audioOut|state
+Name state.send state.sw2b3 state.sw2b2 state.sw2b1 state.sw1b3 state.sw1b2 state.sw1b1 state.sack33 state.sack32 state.sack31 state.sack23 state.sack22 state.sack21 state.sack13 state.sack12 state.sack11 state.sab3 state.sab2 state.sab1 state.s2 state.s1 state.s0 state.sw_init1 state.sw_init0 
+state.sw_init0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.sw_init1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.s0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.s1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.s2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.sab1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.sab2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.sab3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.sack11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.sack12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.sack13 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.sack21 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.sack22 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sack23 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sack31 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sack32 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sack33 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sw1b1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sw1b2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sw1b3 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sw2b1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sw2b2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sw2b3 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.send 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |g48_Sound_Testbed|g48_audio_interface:audioOut|state2
+Name state2.sw_write state2.sw_ready state2.sw_init1 state2.sw_init0 
+state2.sw_init0 0 0 0 0 
+state2.sw_init1 0 0 1 1 
+state2.sw_ready 0 1 0 1 
+state2.sw_write 1 0 0 1 
+
+State Machine - |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_Controller:fm|present_state
+Name present_state.s_ACKNOWLEDGE present_state.s_WRITE present_state.s_READ present_state.s_WAIT_COMMAND present_state.s_RESET 
+present_state.s_RESET 0 0 0 0 0 
+present_state.s_WAIT_COMMAND 0 0 0 1 1 
+present_state.s_READ 0 0 1 0 1 
+present_state.s_WRITE 0 1 0 0 1 
+present_state.s_ACKNOWLEDGE 1 0 0 0 1 
+
+State Machine - |g48_Sound_Testbed|Altera_UP_Flash_Memory_IP_Core_Standalone:flashMem|Altera_UP_Flash_Memory_User_Interface:ui|present_state
+Name present_state.s_ACKNOWLEDGE present_state.s_CHECK_ERASE_DONE present_state.s_ERASE_WAIT_COMPLETED present_state.s_ERASE_CYCLE_DELAY present_state.s_ERASE_CYCLE present_state.s_ERASE_CHIP present_state.s_ERASE_SECTOR present_state.s_CHECK_WRITE_COMPLETE present_state.s_WAIT_UNTIL_WRITTEN present_state.s_WRITE_CYCLE_DELAY present_state.s_WRITE_CYCLE present_state.s_CHECK_MEMORY_CONTENTS present_state.s_READ_BEFORE_WRITE present_state.s_READ present_state.s_WAIT_COMMAND 
+present_state.s_WAIT_COMMAND 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+present_state.s_READ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+present_state.s_READ_BEFORE_WRITE 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+present_state.s_CHECK_MEMORY_CONTENTS 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+present_state.s_WRITE_CYCLE 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+present_state.s_WRITE_CYCLE_DELAY 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+present_state.s_WAIT_UNTIL_WRITTEN 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+present_state.s_CHECK_WRITE_COMPLETE 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+present_state.s_ERASE_SECTOR 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+present_state.s_ERASE_CHIP 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+present_state.s_ERASE_CYCLE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+present_state.s_ERASE_CYCLE_DELAY 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+present_state.s_ERASE_WAIT_COMPLETED 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+present_state.s_CHECK_ERASE_DONE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+present_state.s_ACKNOWLEDGE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

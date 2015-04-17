@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="g48_Lab_2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_sine|LPM_ROM:sin_table|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_a801.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Apr 05 17:08:19 2015
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
+Revision Name : g48_Lab4
+Top-level Entity Name : g48_Sound_Testbed
+Family : Cyclone II
+Total logic elements : 608
+    Total combinational functions : 496
+    Dedicated logic registers : 309
+Total registers : 309
+Total pins : 73
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

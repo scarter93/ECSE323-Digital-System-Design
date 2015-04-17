@@ -1,0 +1,99 @@
+Quartus II 64-Bit
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+11
+980
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+g48_lab1
+# storage
+db|g48_lab1.(0).cnf
+db|g48_lab1.(0).cnf
+# case_insensitive
+# source_file
+g48_lab1.bdf
+7c2f2fcd9b3ca21dc7815d232143afd
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+g48_comp7
+# storage
+db|g48_lab1.(1).cnf
+db|g48_lab1.(1).cnf
+# case_insensitive
+# source_file
+g48_comp7.bdf
+cc25e3fce331d0bffcea93d8a12e9f86
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+g48_busmux
+# storage
+db|g48_lab1.(3).cnf
+db|g48_lab1.(3).cnf
+# case_insensitive
+# source_file
+g48_busmux.bdf
+cb5f2fc04077cf67ae8b57f2f8c5b22
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+g48_busmux:inst4
+g48_busmux:inst3
+g48_busmux:inst
+}
+# macro_sequence
+
+# end
+# entity
+g48_Barrel_Shifter
+# storage
+db|g48_lab1.(2).cnf
+db|g48_lab1.(2).cnf
+# case_insensitive
+# source_file
+g48_barrel_shifter.bdf
+8bc89abd4012105328b2b7a6a45ce26
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

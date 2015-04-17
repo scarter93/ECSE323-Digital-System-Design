@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="g48_Lab_3">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_coc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_1ci.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|LPM_ROM:tempo_table|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_jd01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_v8l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|lpm_counter:lpm_counter_component2" CBX_FILE_NAME="cntr_g7l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_rqf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_ops3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter" CBX_FILE_NAME="cntr_vbi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter" CBX_FILE_NAME="cntr_gui.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g48_Tempo|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter" CBX_FILE_NAME="cntr_32j.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
